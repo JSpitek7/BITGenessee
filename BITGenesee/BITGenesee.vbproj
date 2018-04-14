@@ -203,6 +203,7 @@
     <Content Include="Database.accdb">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </Content>
+    <None Include="Genesee logo.png" />
     <Content Include="Users.accdb">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </Content>

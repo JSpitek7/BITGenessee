@@ -15,4 +15,23 @@
     Private Sub BindingNavigatorMoveNextItem_Click(sender As Object, e As EventArgs) Handles BindingNavigatorMoveNextItem.Click
 
     End Sub
+    ' Displays Demand as Absolute value for better readability
+    Private Sub Prod1DemTextBox_TextChanged(sender As Object, e As EventArgs) Handles Prod1DemTextBox.TextChanged
+        Dim GenDemand As Integer
+        GenDemand = Math.Abs(Convert.ToInt32(Prod1DemTextBox.Text))
+        Prod1DemTextBox.Text = GenDemand.ToString
+
+    End Sub
+    ' Displays Demand as Absolute value for better readability
+    Private Sub Prod2DemTextBox_TextChanged(sender As Object, e As EventArgs) Handles Prod2DemTextBox.TextChanged
+        Dim GenDemand As Integer
+        GenDemand = Math.Abs(Convert.ToInt32(Prod2DemTextBox.Text))
+        Prod2DemTextBox.Text = GenDemand.ToString
+    End Sub
+    ' Displays Demand as Absolute value for better readability
+    Private Sub Prod3DemTextBox_TextChanged(sender As Object, e As EventArgs) Handles Prod3DemTextBox.TextChanged
+        Dim GenDemand As Integer
+        GenDemand = Math.Abs(Convert.ToInt32(Prod3DemTextBox.Text))
+        Prod3DemTextBox.Text = GenDemand.ToString
+    End Sub
 End Class

@@ -179,4 +179,9 @@
         Dim prodForm As New frmProducts
         prodForm.Show()
     End Sub
+
+    Private Sub btnArc_Click(sender As Object, e As EventArgs) Handles btnArc.Click
+        Dim ArcForm As New frmArc
+        ArcForm.Show()
+    End Sub
 End Class

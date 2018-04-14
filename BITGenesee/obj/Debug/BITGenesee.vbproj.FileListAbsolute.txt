@@ -148,3 +148,21 @@ C:\BIT3444\Project\PR3\BITGenesee\obj\Debug\BITGenesee.frmProducts.resources
 C:\BIT3444\Project\PR3\BITGenesee\obj\Debug\BITGenesee.frmNodes.resources
 C:\BIT3444\Project\PR3\BITGenesee\obj\Debug\BITGenesee.frmArc.resources
 C:\BIT3444\Project\PR3\BITGenesee\obj\Debug\BITGenesee.frmlogin.resources
+C:\Users\Liam\Documents\Spring 18\Project\BITGenessee-master\BITGenesee\bin\Debug\Database.accdb
+C:\Users\Liam\Documents\Spring 18\Project\BITGenessee-master\BITGenesee\bin\Debug\Users.accdb
+C:\Users\Liam\Documents\Spring 18\Project\BITGenessee-master\BITGenesee\bin\Debug\BITGenesee.exe.config
+C:\Users\Liam\Documents\Spring 18\Project\BITGenessee-master\BITGenesee\bin\Debug\BITGenesee.exe
+C:\Users\Liam\Documents\Spring 18\Project\BITGenessee-master\BITGenesee\bin\Debug\BITGenesee.pdb
+C:\Users\Liam\Documents\Spring 18\Project\BITGenessee-master\BITGenesee\bin\Debug\BITGenesee.xml
+C:\Users\Liam\Documents\Spring 18\Project\BITGenessee-master\BITGenesee\obj\Debug\BITGenesee.vbprojResolveAssemblyReference.cache
+C:\Users\Liam\Documents\Spring 18\Project\BITGenessee-master\BITGenesee\obj\Debug\BITGenesee.frmProducts.resources
+C:\Users\Liam\Documents\Spring 18\Project\BITGenessee-master\BITGenesee\obj\Debug\BITGenesee.frmNodes.resources
+C:\Users\Liam\Documents\Spring 18\Project\BITGenessee-master\BITGenesee\obj\Debug\BITGenesee.frmVisual.resources
+C:\Users\Liam\Documents\Spring 18\Project\BITGenessee-master\BITGenesee\obj\Debug\BITGenesee.frmArc.resources
+C:\Users\Liam\Documents\Spring 18\Project\BITGenessee-master\BITGenesee\obj\Debug\BITGenesee.frmlogin.resources
+C:\Users\Liam\Documents\Spring 18\Project\BITGenessee-master\BITGenesee\obj\Debug\BITGenesee.Resources.resources
+C:\Users\Liam\Documents\Spring 18\Project\BITGenessee-master\BITGenesee\obj\Debug\BITGenesee.vbproj.GenerateResource.Cache
+C:\Users\Liam\Documents\Spring 18\Project\BITGenessee-master\BITGenesee\obj\Debug\BITGenesee.vbproj.CoreCompileInputs.cache
+C:\Users\Liam\Documents\Spring 18\Project\BITGenessee-master\BITGenesee\obj\Debug\BITGenesee.exe
+C:\Users\Liam\Documents\Spring 18\Project\BITGenessee-master\BITGenesee\obj\Debug\BITGenesee.xml
+C:\Users\Liam\Documents\Spring 18\Project\BITGenessee-master\BITGenesee\obj\Debug\BITGenesee.pdb

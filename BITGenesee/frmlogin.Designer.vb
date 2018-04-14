@@ -1,5 +1,5 @@
 ﻿<Global.Microsoft.VisualBasic.CompilerServices.DesignerGenerated()>
-Partial Class frmLogin
+Partial Class frmlogin
     Inherits System.Windows.Forms.Form
 
     'Form overrides dispose to clean up the component list.
@@ -28,6 +28,8 @@ Partial Class frmLogin
         Me.txtPassword = New System.Windows.Forms.TextBox()
         Me.LblUsername = New System.Windows.Forms.Label()
         Me.lblPassword = New System.Windows.Forms.Label()
+        Me.PictureBox1 = New System.Windows.Forms.PictureBox()
+        CType(Me.PictureBox1, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.SuspendLayout()
         '
         'btnLogin
@@ -81,19 +83,31 @@ Partial Class frmLogin
         Me.lblPassword.TabIndex = 5
         Me.lblPassword.Text = "Password"
         '
-        'frmLogin
+        'PictureBox1
+        '
+        Me.PictureBox1.Image = Global.BITGenesee.My.Resources.Resources.Genesee_logo
+        Me.PictureBox1.Location = New System.Drawing.Point(72, 28)
+        Me.PictureBox1.Name = "PictureBox1"
+        Me.PictureBox1.Size = New System.Drawing.Size(409, 187)
+        Me.PictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage
+        Me.PictureBox1.TabIndex = 6
+        Me.PictureBox1.TabStop = False
+        '
+        'frmlogin
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(9.0!, 20.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
-        Me.ClientSize = New System.Drawing.Size(577, 517)
+        Me.ClientSize = New System.Drawing.Size(569, 521)
+        Me.Controls.Add(Me.PictureBox1)
         Me.Controls.Add(Me.lblPassword)
         Me.Controls.Add(Me.LblUsername)
         Me.Controls.Add(Me.txtPassword)
         Me.Controls.Add(Me.txtUsername)
         Me.Controls.Add(Me.btnCancel)
         Me.Controls.Add(Me.btnLogin)
-        Me.Name = "frmLogin"
+        Me.Name = "frmlogin"
         Me.Text = "frmlogin"
+        CType(Me.PictureBox1, System.ComponentModel.ISupportInitialize).EndInit()
         Me.ResumeLayout(False)
         Me.PerformLayout()
 
@@ -105,4 +119,5 @@ Partial Class frmLogin
     Friend WithEvents txtPassword As TextBox
     Friend WithEvents LblUsername As Label
     Friend WithEvents lblPassword As Label
+    Friend WithEvents PictureBox1 As PictureBox
 End Class
