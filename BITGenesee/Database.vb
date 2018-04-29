@@ -52,11 +52,16 @@ Public Class Database
             Dim dem1 As Decimal = myDataSet.Tables("Nodes").Rows(i)("Prod1Dem")
             Dim dem2 As Decimal = myDataSet.Tables("Nodes").Rows(i)("Prod2Dem")
             Dim dem3 As Decimal = myDataSet.Tables("Nodes").Rows(i)("Prod3Dem")
+            Dim xcord As Decimal = myDataSet.Tables("Nodes").Rows(i)("Xcoord")
+            Dim ycord As Decimal = myDataSet.Tables("Nodes").Rows(i)("Ycoord")
+
             Dim node As New Node(nodeID)
             node.CityName = nodeName
             node.Demand.Add("Genesee", dem1)
             node.Demand.Add("Genny Lite", dem2)
             node.Demand.Add("Cream Ale", dem3)
+            node.Xcoord = xcord
+            node.Ycoord = ycord
             nodesList.Add(nodeID, node)
         Next
         Return nodesList

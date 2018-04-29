@@ -13,7 +13,7 @@
                 main.ShowDialog()
 
 
-                Dim result As Integer = MessageBox.Show("are you sure you want to exit A Need For Genesee solutions?", "exit network solver", MessageBoxButtons.YesNoCancel)
+                Dim result As Integer = MessageBox.Show("Are you sure you want to exit the application?", "Exit", MessageBoxButtons.YesNo)
                 If result = DialogResult.Yes Then
                     Application.Exit()
                 Else
@@ -27,9 +27,11 @@
     End Sub
 
     Private Sub btncancel_click(sender As Object, e As EventArgs) Handles btnCancel.Click
-        Dim result As Integer = MessageBox.Show("are you sure you want to exit a need for genesee solutions?", "exit pathfinder", MessageBoxButtons.YesNoCancel)
+        Dim result As Integer = MessageBox.Show("Are you sure you want to exit the application?", "Exit", MessageBoxButtons.YesNo)
         If result = DialogResult.Yes Then
             Application.Exit()
         End If
     End Sub
+
+
 End Class

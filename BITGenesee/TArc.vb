@@ -1,11 +1,8 @@
-﻿'This class is not implemented in the solver model, I need to
-'ask Seref if it is really necessary
+﻿'TArc  class used in solver model and map form
+
 Public Class TArc
 
     Inherits Arc
-
-    Public Property PathList As New List(Of String())
-
     Public Property MultiFlow As New SortedList(Of String, Decimal)
 
     Public Sub New()
@@ -17,9 +14,6 @@ Public Class TArc
         MyBase.New(t, h)
     End Sub
 
-    ' Returns information on TArc instance
-    Public Overrides Function ToString() As String
-        Return MyBase.ToString & ", Trans Paths: " & PathList.Count
-    End Function
+
 
 End Class

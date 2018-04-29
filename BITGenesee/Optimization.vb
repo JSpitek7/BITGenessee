@@ -10,6 +10,7 @@ Public Class Optimization
     Private myModel As SimplexSolver
 
     'stores data on satisfied constraints for each city node
+    'key is CityNameProductName
     Public SatisfiedNodeDem As New SortedList(Of String, Decimal)
 
     Public Sub New()

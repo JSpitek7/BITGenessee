@@ -5,6 +5,8 @@
     Public Property ArcsIn As New List(Of Arc)
     Public Property ArcsOut As New List(Of Arc)
     Public Property Demand As New SortedList(Of String, Decimal)
+    Public Property Xcoord As Decimal
+    Public Property Ycoord As Decimal
 
     'default constructor
     Public Sub New()

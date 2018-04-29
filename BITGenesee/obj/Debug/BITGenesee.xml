@@ -27,6 +27,11 @@ BITGenesee
   Looks up a localized resource of type System.Drawing.Bitmap.
 </summary>
 </member>
+<member name="P:BITGenesee.My.Resources.Resources.USmap">
+<summary>
+  Looks up a localized resource of type System.Drawing.Bitmap.
+</summary>
+</member>
 <member name="T:BITGenesee.DatabaseDataSet">
 <summary>
 Represents a strongly typed in-memory cache of data.

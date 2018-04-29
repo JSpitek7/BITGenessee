@@ -7,6 +7,7 @@
     Dim arcsList As New SortedList(Of String, Arc)
     Dim prodsList As New SortedList(Of String, Product)
     Dim solved As Boolean
+    Dim problemType As String
 
     'sub idea taken from homework 3
     'updates tree view object based on selected city
@@ -85,6 +86,7 @@
             Else
                 txtDemand.Text = data.GetDemand(nodesList(lstNodes.SelectedItem),
                                                 prodsList(lstProducts.SelectedItem))
+                txtSatisfiedDemand.Text = 0
             End If
 
         End If
@@ -103,6 +105,7 @@
         Else
             txtDemand.Text = data.GetDemand(nodesList(lstNodes.SelectedItem),
                                              prodsList(lstProducts.SelectedItem))
+            txtSatisfiedDemand.Text = 0
         End If
 
 
@@ -123,8 +126,10 @@
 
         Dim totalCost As Decimal = 0
         If cbxSelected.Checked Then
+            problemType = lstProducts.SelectedItem
             totalCost += opt.MinCostFlow(net, lstProducts.SelectedItem)
         Else
+            problemType = "All"
             totalCost += opt.MinCostFlow2(net)
         End If
         If totalCost > 0 Then
@@ -134,6 +139,7 @@
 
         txtTotalCost.Text = "$" & Math.Round(totalCost, 2)
         txtDemand.Text = data.GetDemand(net.NodeList(lstNodes.SelectedItem), net.ProdList(lstProducts.SelectedItem))
+        txtSatisfiedDemand.Text = opt.SatisfiedNodeDem(lstNodes.SelectedItem & lstProducts.SelectedItem)
     End Sub
 
     Private Sub frmVisual_Load(sender As Object, e As EventArgs) Handles MyBase.Load
@@ -183,5 +189,24 @@
     Private Sub btnArc_Click(sender As Object, e As EventArgs) Handles btnArc.Click
         Dim ArcForm As New frmArc
         ArcForm.Show()
+    End Sub
+
+    Private Sub btnShowMap_Click(sender As Object, e As EventArgs) Handles btnShowMap.Click
+        Dim newMap As frmMap
+        Try
+            If solved = False Then
+                Throw New Exception("Solve LP Model first.")
+            Else
+                newMap = New frmMap
+                newMap.Net = net
+                newMap.Opt = opt
+                newMap.problemType = problemType
+
+            End If
+
+            newMap.ShowDialog()
+        Catch ex As Exception
+            MessageBox.Show(ex.Message, "Error")
+        End Try
     End Sub
 End Class

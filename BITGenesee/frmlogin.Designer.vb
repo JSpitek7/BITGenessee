@@ -34,70 +34,79 @@ Partial Class frmlogin
         '
         'btnLogin
         '
-        Me.btnLogin.Location = New System.Drawing.Point(41, 424)
+        Me.btnLogin.Location = New System.Drawing.Point(27, 276)
+        Me.btnLogin.Margin = New System.Windows.Forms.Padding(2, 2, 2, 2)
         Me.btnLogin.Name = "btnLogin"
-        Me.btnLogin.Size = New System.Drawing.Size(166, 58)
+        Me.btnLogin.Size = New System.Drawing.Size(111, 38)
         Me.btnLogin.TabIndex = 0
         Me.btnLogin.Text = "Login"
         Me.btnLogin.UseVisualStyleBackColor = True
         '
         'btnCancel
         '
-        Me.btnCancel.Location = New System.Drawing.Point(357, 422)
+        Me.btnCancel.Location = New System.Drawing.Point(238, 274)
+        Me.btnCancel.Margin = New System.Windows.Forms.Padding(2, 2, 2, 2)
         Me.btnCancel.Name = "btnCancel"
-        Me.btnCancel.Size = New System.Drawing.Size(163, 60)
+        Me.btnCancel.Size = New System.Drawing.Size(109, 39)
         Me.btnCancel.TabIndex = 1
         Me.btnCancel.Text = "Close"
         Me.btnCancel.UseVisualStyleBackColor = True
         '
         'txtUsername
         '
-        Me.txtUsername.Location = New System.Drawing.Point(257, 257)
+        Me.txtUsername.Location = New System.Drawing.Point(171, 167)
+        Me.txtUsername.Margin = New System.Windows.Forms.Padding(2, 2, 2, 2)
         Me.txtUsername.Name = "txtUsername"
-        Me.txtUsername.Size = New System.Drawing.Size(224, 26)
+        Me.txtUsername.Size = New System.Drawing.Size(151, 20)
         Me.txtUsername.TabIndex = 2
         '
         'txtPassword
         '
-        Me.txtPassword.Location = New System.Drawing.Point(258, 334)
+        Me.txtPassword.Location = New System.Drawing.Point(172, 217)
+        Me.txtPassword.Margin = New System.Windows.Forms.Padding(2, 2, 2, 2)
         Me.txtPassword.Name = "txtPassword"
-        Me.txtPassword.Size = New System.Drawing.Size(223, 26)
+        Me.txtPassword.Size = New System.Drawing.Size(150, 20)
         Me.txtPassword.TabIndex = 3
         Me.txtPassword.UseSystemPasswordChar = True
         '
         'LblUsername
         '
         Me.LblUsername.AutoSize = True
-        Me.LblUsername.Location = New System.Drawing.Point(68, 257)
+        Me.LblUsername.Location = New System.Drawing.Point(45, 167)
+        Me.LblUsername.Margin = New System.Windows.Forms.Padding(2, 0, 2, 0)
         Me.LblUsername.Name = "LblUsername"
-        Me.LblUsername.Size = New System.Drawing.Size(83, 20)
+        Me.LblUsername.Size = New System.Drawing.Size(55, 13)
         Me.LblUsername.TabIndex = 4
         Me.LblUsername.Text = "Username"
         '
         'lblPassword
         '
         Me.lblPassword.AutoSize = True
-        Me.lblPassword.Location = New System.Drawing.Point(68, 340)
+        Me.lblPassword.Location = New System.Drawing.Point(45, 221)
+        Me.lblPassword.Margin = New System.Windows.Forms.Padding(2, 0, 2, 0)
         Me.lblPassword.Name = "lblPassword"
-        Me.lblPassword.Size = New System.Drawing.Size(78, 20)
+        Me.lblPassword.Size = New System.Drawing.Size(53, 13)
         Me.lblPassword.TabIndex = 5
         Me.lblPassword.Text = "Password"
         '
         'PictureBox1
         '
         Me.PictureBox1.Image = Global.BITGenesee.My.Resources.Resources.Genesee_logo
-        Me.PictureBox1.Location = New System.Drawing.Point(72, 28)
+        Me.PictureBox1.Location = New System.Drawing.Point(48, 18)
+        Me.PictureBox1.Margin = New System.Windows.Forms.Padding(2, 2, 2, 2)
         Me.PictureBox1.Name = "PictureBox1"
-        Me.PictureBox1.Size = New System.Drawing.Size(409, 187)
+        Me.PictureBox1.Size = New System.Drawing.Size(273, 122)
         Me.PictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage
         Me.PictureBox1.TabIndex = 6
         Me.PictureBox1.TabStop = False
         '
         'frmlogin
         '
-        Me.AutoScaleDimensions = New System.Drawing.SizeF(9.0!, 20.0!)
+        Me.AcceptButton = Me.btnLogin
+        Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
-        Me.ClientSize = New System.Drawing.Size(569, 521)
+        Me.CancelButton = Me.btnCancel
+        Me.ClientSize = New System.Drawing.Size(379, 339)
         Me.Controls.Add(Me.PictureBox1)
         Me.Controls.Add(Me.lblPassword)
         Me.Controls.Add(Me.LblUsername)
@@ -105,8 +114,9 @@ Partial Class frmlogin
         Me.Controls.Add(Me.txtUsername)
         Me.Controls.Add(Me.btnCancel)
         Me.Controls.Add(Me.btnLogin)
+        Me.Margin = New System.Windows.Forms.Padding(2, 2, 2, 2)
         Me.Name = "frmlogin"
-        Me.Text = "frmlogin"
+        Me.Text = "Login"
         CType(Me.PictureBox1, System.ComponentModel.ISupportInitialize).EndInit()
         Me.ResumeLayout(False)
         Me.PerformLayout()
