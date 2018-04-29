@@ -7,6 +7,8 @@ Public Class Database
     Private productsDA As OleDbDataAdapter
     Private supplyDemandDA As OleDbDataAdapter
     Private UsersDA As OleDbDataAdapter
+    Private Modify As OleDbDataAdapter
+
 
     'creates data adapter
     Public Function GetDataAdapter(mySQL As String) As OleDbDataAdapter
@@ -108,5 +110,8 @@ Public Class Database
         Else
             Return False
         End If
+    End Function
+    Public Function getdataset() As DataSet
+        Return myDataSet
     End Function
 End Class

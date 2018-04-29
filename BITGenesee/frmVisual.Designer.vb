@@ -42,6 +42,7 @@ Partial Class frmVisual
         Me.btnProduct = New System.Windows.Forms.Button()
         Me.cbxSelected = New System.Windows.Forms.CheckBox()
         Me.btnArc = New System.Windows.Forms.Button()
+        Me.BtnModify = New System.Windows.Forms.Button()
         Me.SuspendLayout()
         '
         'lstNodes
@@ -228,11 +229,21 @@ Partial Class frmVisual
         Me.btnArc.Text = "Show Arc Form"
         Me.btnArc.UseVisualStyleBackColor = True
         '
+        'BtnModify
+        '
+        Me.BtnModify.Location = New System.Drawing.Point(387, 723)
+        Me.BtnModify.Name = "BtnModify"
+        Me.BtnModify.Size = New System.Drawing.Size(206, 37)
+        Me.BtnModify.TabIndex = 21
+        Me.BtnModify.Text = "Modify Capacity/Demand"
+        Me.BtnModify.UseVisualStyleBackColor = True
+        '
         'frmVisual
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(9.0!, 20.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
         Me.ClientSize = New System.Drawing.Size(638, 789)
+        Me.Controls.Add(Me.BtnModify)
         Me.Controls.Add(Me.btnArc)
         Me.Controls.Add(Me.cbxSelected)
         Me.Controls.Add(Me.btnProduct)
@@ -280,4 +291,5 @@ Partial Class frmVisual
     Friend WithEvents btnProduct As Button
     Friend WithEvents cbxSelected As CheckBox
     Friend WithEvents btnArc As Button
+    Friend WithEvents BtnModify As Button
 End Class

@@ -1,6 +1,6 @@
 ﻿Public Class frmVisual
 
-    Dim data As New Database
+    Public Property data As New Database
     Dim WithEvents net As New Network
     Dim opt As Optimization
     Dim nodesList As New SortedList(Of String, Node)
@@ -133,7 +133,7 @@
 
 
         txtTotalCost.Text = "$" & Math.Round(totalCost, 2)
-        txtDemand.Text = data.GetDemand(net.NodeList(lstNodes.SelectedItem), net.ProdList(lstProducts.SelectedItem))
+        txtDemand.Text = Math.Abs(data.GetDemand(net.NodeList(lstNodes.SelectedItem), net.ProdList(lstProducts.SelectedItem)))
     End Sub
 
     Private Sub frmVisual_Load(sender As Object, e As EventArgs) Handles MyBase.Load
@@ -183,5 +183,10 @@
     Private Sub btnArc_Click(sender As Object, e As EventArgs) Handles btnArc.Click
         Dim ArcForm As New frmArc
         ArcForm.Show()
+    End Sub
+
+    Private Sub BtnModify_Click(sender As Object, e As EventArgs) Handles BtnModify.Click
+        Dim ModifyForm As New frmModify
+        ModifyForm.Show()
     End Sub
 End Class
