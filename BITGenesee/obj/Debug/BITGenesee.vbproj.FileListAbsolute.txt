@@ -209,3 +209,4 @@ C:\Users\Liam\Downloads\BITGenessee-JSpitek7-patch-1\BITGenessee-JSpitek7-patch-
 C:\Users\Liam\Downloads\BITGenessee-JSpitek7-patch-1\BITGenessee-JSpitek7-patch-1\BITGenesee\bin\Debug\BITGenesee.application
 C:\Users\Liam\Downloads\BITGenessee-JSpitek7-patch-1\BITGenessee-JSpitek7-patch-1\BITGenesee\obj\Debug\BITGenesee.exe.manifest
 C:\Users\Liam\Downloads\BITGenessee-JSpitek7-patch-1\BITGenessee-JSpitek7-patch-1\BITGenesee\obj\Debug\BITGenesee.application
+C:\Users\Liam\Downloads\BITGenessee-JSpitek7-patch-1\BITGenessee-JSpitek7-patch-1\BITGenesee\obj\Debug\BITGenesee.frmMDI.resources

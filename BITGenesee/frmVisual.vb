@@ -1,5 +1,7 @@
 ﻿Public Class frmVisual
 
+    Public Property FormSList As SortedList(Of String, Form)
+
     Dim data As New Database
     Dim dbnew As New Database
     Dim WithEvents net As New Network
@@ -130,6 +132,10 @@
 
     'solves LP model
     Private Sub btnSolve_Click(sender As Object, e As EventArgs) Handles btnSolve.Click
+        SolveLPModel()
+    End Sub
+
+    Public Sub SolveLPModel()
         solved = False
         BuildNetwork()
 
@@ -143,6 +149,7 @@
         End If
         If totalCost > 0 Then
             solved = True
+            MessageBox.Show("Optimal solution found.")
         End If
 
         If Int(totalCost) = 0 Then
@@ -204,7 +211,11 @@
     End Sub
 
     Private Sub btnShowMap_Click(sender As Object, e As EventArgs) Handles btnShowMap.Click
-        Dim newMap As frmMap
+        ShowMap()
+    End Sub
+
+    Public Sub ShowMap()
+        Dim newMap As frmMap ' = FormSList("Map")
         Try
             If solved = False Then
                 Throw New Exception("Solve LP Model first.")

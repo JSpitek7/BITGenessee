@@ -9,9 +9,14 @@
 
     Private Sub frmMap_Load(sender As Object, e As EventArgs) Handles MyBase.Load
         'populate combo boxes
-        For Each p In Net.ProdList.Keys
-            cboProduct.Items.Add(p)
-        Next
+        If Net Is Nothing Then
+            Exit Sub
+        Else
+            For Each p In Net.ProdList.Keys
+                cboProduct.Items.Add(p)
+            Next
+        End If
+
         cboProduct.SelectedIndex = 0
     End Sub
 
@@ -60,51 +65,56 @@
     End Sub
 
     Private Sub frmMap_Paint(sender As Object, e As PaintEventArgs) Handles MyBase.Paint
-        'scale ratios
-        Xscale = Me.ClientRectangle.Width / MapImage.Width
-        Yscale = Me.ClientRectangle.Height / MapImage.Height
-        'clear form background and draw image
-        e.Graphics.Clear(Color.White)
-        Dim rect As New Rectangle(0, 0, MapImage.Width, MapImage.Height)
-        e.Graphics.DrawImage(MapImage, Me.ClientRectangle, rect, GraphicsUnit.Pixel)
-        Me.BackgroundImageLayout = ImageLayout.Stretch
-        'draw network
-        'draws arcs
-        For Each a In Net.ArcList.Values
-            Dim arcFlow As Integer = a.MultiFlow(cboProduct.Text)
-            'checks if arc is used for selected product
-            If arcFlow > 0 Then
-                Dim arcColor As Color
-                'sets arc color to green if less than 100 units are transported
-                If arcFlow <= 100 Then
-                    arcColor = Color.Green
-                    'sets arc color to yellow if between 100 and 200 units are transported
-                ElseIf 100 < arcFlow And arcFlow <= 200 Then
-                    arcColor = Color.Yellow
-                    'sets arc color to red if more than 200 units are transported
-                Else
-                    arcColor = Color.Red
+        If Net Is Nothing Then
+            Exit Sub
+        Else
+            'scale ratios
+            Xscale = Me.ClientRectangle.Width / MapImage.Width
+            Yscale = Me.ClientRectangle.Height / MapImage.Height
+            'clear form background and draw image
+            e.Graphics.Clear(Color.White)
+            Dim rect As New Rectangle(0, 0, MapImage.Width, MapImage.Height)
+            e.Graphics.DrawImage(MapImage, Me.ClientRectangle, rect, GraphicsUnit.Pixel)
+            Me.BackgroundImageLayout = ImageLayout.Stretch
+            'draw network
+            'draws arcs
+            For Each a In Net.ArcList.Values
+                Dim arcFlow As Integer = a.MultiFlow(cboProduct.Text)
+                'checks if arc is used for selected product
+                If arcFlow > 0 Then
+                    Dim arcColor As Color
+                    'sets arc color to green if less than 100 units are transported
+                    If arcFlow <= 100 Then
+                        arcColor = Color.Green
+                        'sets arc color to yellow if between 100 and 200 units are transported
+                    ElseIf 100 < arcFlow And arcFlow <= 200 Then
+                        arcColor = Color.Yellow
+                        'sets arc color to red if more than 200 units are transported
+                    Else
+                        arcColor = Color.Red
+                    End If
+                    DrawArc(a, arcColor, 2, False, e)
                 End If
-                DrawArc(a, arcColor, 2, False, e)
-            End If
-        Next
-
-        'draws nodes
-        'checks to see if node demand exists in problem type
-        If problemType = "All" Or problemType = cboProduct.SelectedItem Then
-            For Each n In Net.NodeList.Values
-                Dim fillColor As Color
-                Dim demanded As Integer = Net.NodeList(n.ID).Demand(cboProduct.Text)
-                Dim received As Integer = Opt.SatisfiedNodeDem(n.ID & cboProduct.Text)
-
-                If received <> demanded Then
-                    fillColor = Color.Red
-                Else
-                    fillColor = Color.Green
-                End If
-                DrawNode(n, Color.Black, fillColor, Color.Black, e)
             Next
+
+            'draws nodes
+            'checks to see if node demand exists in problem type
+            If problemType = "All" Or problemType = cboProduct.SelectedItem Then
+                For Each n In Net.NodeList.Values
+                    Dim fillColor As Color
+                    Dim demanded As Integer = Net.NodeList(n.ID).Demand(cboProduct.Text)
+                    Dim received As Integer = Opt.SatisfiedNodeDem(n.ID & cboProduct.Text)
+
+                    If received <> demanded Then
+                        fillColor = Color.Red
+                    Else
+                        fillColor = Color.Green
+                    End If
+                    DrawNode(n, Color.Black, fillColor, Color.Black, e)
+                Next
+            End If
         End If
+
 
     End Sub
 
