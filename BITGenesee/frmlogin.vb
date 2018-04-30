@@ -1,15 +1,16 @@
 ﻿Public Class frmlogin
-    Public main As frmVisual
+
+    Public main As frmMDI
     Dim userdata As New Database(True)
 
     ' gets username and password from user, checks them against the users in the database
     Private Sub btnlogin_click(sender As Object, e As EventArgs) Handles btnLogin.Click
         Try
             If Not userdata.UserFound(txtUsername.Text, txtPassword.Text) Then
-                Throw New Exception("username/password not found.")
+                Throw New Exception("Username/Password not found.")
             Else
                 Me.Hide()
-                main = New frmVisual
+                main = New frmMDI
                 main.ShowDialog()
 
 
@@ -22,7 +23,7 @@
                 End If
             End If
         Catch ex As Exception
-            MessageBox.Show(ex.Message, "login error")
+            MessageBox.Show(ex.Message, "Login Error")
         End Try
     End Sub
 
@@ -33,5 +34,7 @@
         End If
     End Sub
 
+    Private Sub frmlogin_Load(sender As Object, e As EventArgs) Handles MyBase.Load
 
+    End Sub
 End Class

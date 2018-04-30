@@ -47,14 +47,14 @@
     </dependentAssembly>
   </dependency>
   <dependency>
-    <dependentAssembly dependencyType="install" allowDelayedBinding="true" codebase="BITGenesee.exe" size="6773208">
+    <dependentAssembly dependencyType="install" allowDelayedBinding="true" codebase="BITGenesee.exe" size="6780888">
       <assemblyIdentity name="BITGenesee" version="1.0.0.0" language="neutral" processorArchitecture="msil" />
       <hash>
         <dsig:Transforms>
           <dsig:Transform Algorithm="urn:schemas-microsoft-com:HashTransforms.Identity" />
         </dsig:Transforms>
         <dsig:DigestMethod Algorithm="http://www.w3.org/2000/09/xmldsig#sha256" />
-        <dsig:DigestValue>xjzcOevDkp29UZaNgUd4zODQ/xlmC0gOJxwQWn2XZ8o=</dsig:DigestValue>
+        <dsig:DigestValue>IkBGCrxRNpTdYTyfoOFmEvL9435s1lTAIqXAyfDcC5g=</dsig:DigestValue>
       </hash>
     </dependentAssembly>
   </dependency>
