@@ -41,10 +41,6 @@ Partial Class frmNodes
         Me.BindingNavigatorAddNewItem = New System.Windows.Forms.ToolStripButton()
         Me.BindingNavigatorDeleteItem = New System.Windows.Forms.ToolStripButton()
         Me.BindingNavigator1 = New System.Windows.Forms.BindingNavigator(Me.components)
-        Me.DatabaseDataSet = New BITGenesee.DatabaseDataSet()
-        Me.NodesBindingSource = New System.Windows.Forms.BindingSource(Me.components)
-        Me.NodesTableAdapter = New BITGenesee.DatabaseDataSetTableAdapters.NodesTableAdapter()
-        Me.TableAdapterManager = New BITGenesee.DatabaseDataSetTableAdapters.TableAdapterManager()
         Me.CityTextBox = New System.Windows.Forms.TextBox()
         Me.CodeTextBox = New System.Windows.Forms.TextBox()
         Me.Prod1DemTextBox = New System.Windows.Forms.TextBox()
@@ -53,6 +49,11 @@ Partial Class frmNodes
         Me.SaveFileDialog1 = New System.Windows.Forms.SaveFileDialog()
         Me.SaveFileDialog2 = New System.Windows.Forms.SaveFileDialog()
         Me.SaveFileDialog3 = New System.Windows.Forms.SaveFileDialog()
+        Me.btnUpdate = New System.Windows.Forms.Button()
+        Me.NodesBindingSource = New System.Windows.Forms.BindingSource(Me.components)
+        Me.DatabaseDataSet = New BITGenesee.DatabaseDataSet()
+        Me.NodesTableAdapter = New BITGenesee.DatabaseDataSetTableAdapters.NodesTableAdapter()
+        Me.TableAdapterManager = New BITGenesee.DatabaseDataSetTableAdapters.TableAdapterManager()
         CityLabel = New System.Windows.Forms.Label()
         CodeLabel = New System.Windows.Forms.Label()
         Prod1DemLabel = New System.Windows.Forms.Label()
@@ -60,8 +61,8 @@ Partial Class frmNodes
         Prod3DemLabel = New System.Windows.Forms.Label()
         CType(Me.BindingNavigator1, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.BindingNavigator1.SuspendLayout()
-        CType(Me.DatabaseDataSet, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.NodesBindingSource, System.ComponentModel.ISupportInitialize).BeginInit()
+        CType(Me.DatabaseDataSet, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.SuspendLayout()
         '
         'CityLabel
@@ -218,28 +219,6 @@ Partial Class frmNodes
         Me.BindingNavigator1.TabIndex = 0
         Me.BindingNavigator1.Text = "BindingNavigator1"
         '
-        'DatabaseDataSet
-        '
-        Me.DatabaseDataSet.DataSetName = "DatabaseDataSet"
-        Me.DatabaseDataSet.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema
-        '
-        'NodesBindingSource
-        '
-        Me.NodesBindingSource.DataMember = "Nodes"
-        Me.NodesBindingSource.DataSource = Me.DatabaseDataSet
-        '
-        'NodesTableAdapter
-        '
-        Me.NodesTableAdapter.ClearBeforeFill = True
-        '
-        'TableAdapterManager
-        '
-        Me.TableAdapterManager.ArcsTableAdapter = Nothing
-        Me.TableAdapterManager.BackupDataSetBeforeUpdate = False
-        Me.TableAdapterManager.NodesTableAdapter = Me.NodesTableAdapter
-        Me.TableAdapterManager.ProductsTableAdapter = Nothing
-        Me.TableAdapterManager.UpdateOrder = BITGenesee.DatabaseDataSetTableAdapters.TableAdapterManager.UpdateOrderOption.InsertUpdateDelete
-        '
         'CityTextBox
         '
         Me.CityTextBox.DataBindings.Add(New System.Windows.Forms.Binding("Text", Me.NodesBindingSource, "City", True))
@@ -285,11 +264,43 @@ Partial Class frmNodes
         Me.Prod3DemTextBox.Size = New System.Drawing.Size(76, 26)
         Me.Prod3DemTextBox.TabIndex = 10
         '
+        'btnUpdate
+        '
+        Me.btnUpdate.Location = New System.Drawing.Point(251, 290)
+        Me.btnUpdate.Name = "btnUpdate"
+        Me.btnUpdate.Size = New System.Drawing.Size(75, 29)
+        Me.btnUpdate.TabIndex = 11
+        Me.btnUpdate.Text = "Update Demand"
+        Me.btnUpdate.UseVisualStyleBackColor = True
+        '
+        'NodesBindingSource
+        '
+        Me.NodesBindingSource.DataMember = "Nodes"
+        Me.NodesBindingSource.DataSource = Me.DatabaseDataSet
+        '
+        'DatabaseDataSet
+        '
+        Me.DatabaseDataSet.DataSetName = "DatabaseDataSet"
+        Me.DatabaseDataSet.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema
+        '
+        'NodesTableAdapter
+        '
+        Me.NodesTableAdapter.ClearBeforeFill = True
+        '
+        'TableAdapterManager
+        '
+        Me.TableAdapterManager.ArcsTableAdapter = Nothing
+        Me.TableAdapterManager.BackupDataSetBeforeUpdate = False
+        Me.TableAdapterManager.NodesTableAdapter = Me.NodesTableAdapter
+        Me.TableAdapterManager.ProductsTableAdapter = Nothing
+        Me.TableAdapterManager.UpdateOrder = BITGenesee.DatabaseDataSetTableAdapters.TableAdapterManager.UpdateOrderOption.InsertUpdateDelete
+        '
         'frmNodes
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(9.0!, 20.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
         Me.ClientSize = New System.Drawing.Size(475, 402)
+        Me.Controls.Add(Me.btnUpdate)
         Me.Controls.Add(CityLabel)
         Me.Controls.Add(Me.CityTextBox)
         Me.Controls.Add(CodeLabel)
@@ -307,8 +318,8 @@ Partial Class frmNodes
         CType(Me.BindingNavigator1, System.ComponentModel.ISupportInitialize).EndInit()
         Me.BindingNavigator1.ResumeLayout(False)
         Me.BindingNavigator1.PerformLayout()
-        CType(Me.DatabaseDataSet, System.ComponentModel.ISupportInitialize).EndInit()
         CType(Me.NodesBindingSource, System.ComponentModel.ISupportInitialize).EndInit()
+        CType(Me.DatabaseDataSet, System.ComponentModel.ISupportInitialize).EndInit()
         Me.ResumeLayout(False)
         Me.PerformLayout()
 
@@ -338,4 +349,5 @@ Partial Class frmNodes
     Friend WithEvents SaveFileDialog1 As SaveFileDialog
     Friend WithEvents SaveFileDialog2 As SaveFileDialog
     Friend WithEvents SaveFileDialog3 As SaveFileDialog
+    Friend WithEvents btnUpdate As Button
 End Class

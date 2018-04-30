@@ -1,6 +1,7 @@
 ﻿Public Class frmVisual
 
     Dim data As New Database
+    Dim dbnew As New Database
     Dim WithEvents net As New Network
     Dim opt As Optimization
     Dim nodesList As New SortedList(Of String, Node)
@@ -114,9 +115,17 @@
     'builds network for solver model
     Public Sub BuildNetwork()
         opt = New Optimization
-        net.AddNodes(data.GetNodes)
-        net.AddArcs(data.GetArcs(net.NodeList))
-        net.AddProducts(data.GetProducts)
+        If dbnew Is Nothing Then
+            net.AddNodes(data.GetNodes)
+            net.AddArcs(data.GetArcs(net.NodeList))
+            net.AddProducts(data.GetProducts)
+        Else
+            Updatedb()
+            net.AddNodes(dbnew.GetNodes)
+            net.AddArcs(dbnew.GetArcs(net.NodeList))
+            net.AddProducts(dbnew.GetProducts)
+        End If
+
     End Sub
 
     'solves LP model
@@ -136,10 +145,13 @@
             solved = True
         End If
 
-
-        txtTotalCost.Text = "$" & Math.Round(totalCost, 2)
-        txtDemand.Text = data.GetDemand(net.NodeList(lstNodes.SelectedItem), net.ProdList(lstProducts.SelectedItem))
-        txtSatisfiedDemand.Text = opt.SatisfiedNodeDem(lstNodes.SelectedItem & lstProducts.SelectedItem)
+        If Int(totalCost) = 0 Then
+            txtTotalCost.Text = "Error. Check demand constraints"
+        Else
+            txtTotalCost.Text = Math.Round(totalCost, 2).ToString("$0,00.00")
+        End If
+        txtDemand.Text = Math.Abs(data.GetDemand(net.NodeList(lstNodes.SelectedItem), net.ProdList(lstProducts.SelectedItem)))
+        txtSatisfiedDemand.Text = Math.Abs(opt.SatisfiedNodeDem(lstNodes.SelectedItem & lstProducts.SelectedItem))
     End Sub
 
     Private Sub frmVisual_Load(sender As Object, e As EventArgs) Handles MyBase.Load
@@ -163,7 +175,7 @@
         For Each node In nodesQuery
             lstNodes.Items.Add(node.Key)
         Next
-        'populats products listbox
+        'populates products listbox
         For Each product In prodsQuery
             lstProducts.Items.Add(product.Key)
         Next
@@ -208,5 +220,16 @@
         Catch ex As Exception
             MessageBox.Show(ex.Message, "Error")
         End Try
+    End Sub
+
+    Private Sub Updatedb()
+        'build new database to grab updated tables
+        dbnew = New Database()
+
+        'populate network with updated tables
+
+        nodesList = dbnew.GetNodes()
+        arcsList = dbnew.GetArcs(nodesList)
+        prodsList = dbnew.GetProducts()
     End Sub
 End Class

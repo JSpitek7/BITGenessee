@@ -23,32 +23,33 @@ Partial Class frmArc
     <System.Diagnostics.DebuggerStepThrough()> _
     Private Sub InitializeComponent()
         Me.components = New System.ComponentModel.Container()
-        Dim resources As System.ComponentModel.ComponentResourceManager = New System.ComponentModel.ComponentResourceManager(GetType(frmArc))
         Dim TailLabel As System.Windows.Forms.Label
         Dim HeadLabel As System.Windows.Forms.Label
         Dim DistanceLabel As System.Windows.Forms.Label
         Dim CapacityLabel As System.Windows.Forms.Label
+        Dim resources As System.ComponentModel.ComponentResourceManager = New System.ComponentModel.ComponentResourceManager(GetType(frmArc))
         Me.DatabaseDataSet1 = New BITGenesee.DatabaseDataSet()
         Me.ArcsTableAdapter1 = New BITGenesee.DatabaseDataSetTableAdapters.ArcsTableAdapter()
         Me.ArcsBindingSource = New System.Windows.Forms.BindingSource(Me.components)
         Me.TableAdapterManager = New BITGenesee.DatabaseDataSetTableAdapters.TableAdapterManager()
         Me.ArcsBindingNavigator = New System.Windows.Forms.BindingNavigator(Me.components)
+        Me.BindingNavigatorAddNewItem = New System.Windows.Forms.ToolStripButton()
+        Me.BindingNavigatorCountItem = New System.Windows.Forms.ToolStripLabel()
+        Me.BindingNavigatorDeleteItem = New System.Windows.Forms.ToolStripButton()
         Me.BindingNavigatorMoveFirstItem = New System.Windows.Forms.ToolStripButton()
         Me.BindingNavigatorMovePreviousItem = New System.Windows.Forms.ToolStripButton()
         Me.BindingNavigatorSeparator = New System.Windows.Forms.ToolStripSeparator()
         Me.BindingNavigatorPositionItem = New System.Windows.Forms.ToolStripTextBox()
-        Me.BindingNavigatorCountItem = New System.Windows.Forms.ToolStripLabel()
         Me.BindingNavigatorSeparator1 = New System.Windows.Forms.ToolStripSeparator()
         Me.BindingNavigatorMoveNextItem = New System.Windows.Forms.ToolStripButton()
         Me.BindingNavigatorMoveLastItem = New System.Windows.Forms.ToolStripButton()
         Me.BindingNavigatorSeparator2 = New System.Windows.Forms.ToolStripSeparator()
-        Me.BindingNavigatorAddNewItem = New System.Windows.Forms.ToolStripButton()
-        Me.BindingNavigatorDeleteItem = New System.Windows.Forms.ToolStripButton()
         Me.ArcsBindingNavigatorSaveItem = New System.Windows.Forms.ToolStripButton()
         Me.TailTextBox = New System.Windows.Forms.TextBox()
         Me.HeadTextBox = New System.Windows.Forms.TextBox()
         Me.DistanceTextBox = New System.Windows.Forms.TextBox()
         Me.CapacityTextBox = New System.Windows.Forms.TextBox()
+        Me.btnUpdate = New System.Windows.Forms.Button()
         TailLabel = New System.Windows.Forms.Label()
         HeadLabel = New System.Windows.Forms.Label()
         DistanceLabel = New System.Windows.Forms.Label()
@@ -58,6 +59,42 @@ Partial Class frmArc
         CType(Me.ArcsBindingNavigator, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.ArcsBindingNavigator.SuspendLayout()
         Me.SuspendLayout()
+        '
+        'TailLabel
+        '
+        TailLabel.AutoSize = True
+        TailLabel.Location = New System.Drawing.Point(153, 168)
+        TailLabel.Name = "TailLabel"
+        TailLabel.Size = New System.Drawing.Size(37, 20)
+        TailLabel.TabIndex = 1
+        TailLabel.Text = "Tail:"
+        '
+        'HeadLabel
+        '
+        HeadLabel.AutoSize = True
+        HeadLabel.Location = New System.Drawing.Point(153, 200)
+        HeadLabel.Name = "HeadLabel"
+        HeadLabel.Size = New System.Drawing.Size(52, 20)
+        HeadLabel.TabIndex = 3
+        HeadLabel.Text = "Head:"
+        '
+        'DistanceLabel
+        '
+        DistanceLabel.AutoSize = True
+        DistanceLabel.Location = New System.Drawing.Point(153, 232)
+        DistanceLabel.Name = "DistanceLabel"
+        DistanceLabel.Size = New System.Drawing.Size(76, 20)
+        DistanceLabel.TabIndex = 5
+        DistanceLabel.Text = "Distance:"
+        '
+        'CapacityLabel
+        '
+        CapacityLabel.AutoSize = True
+        CapacityLabel.Location = New System.Drawing.Point(153, 264)
+        CapacityLabel.Name = "CapacityLabel"
+        CapacityLabel.Size = New System.Drawing.Size(74, 20)
+        CapacityLabel.TabIndex = 7
+        CapacityLabel.Text = "Capacity:"
         '
         'DatabaseDataSet1
         '
@@ -100,13 +137,38 @@ Partial Class frmArc
         Me.ArcsBindingNavigator.TabIndex = 0
         Me.ArcsBindingNavigator.Text = "BindingNavigator1"
         '
+        'BindingNavigatorAddNewItem
+        '
+        Me.BindingNavigatorAddNewItem.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image
+        Me.BindingNavigatorAddNewItem.Image = CType(resources.GetObject("BindingNavigatorAddNewItem.Image"), System.Drawing.Image)
+        Me.BindingNavigatorAddNewItem.Name = "BindingNavigatorAddNewItem"
+        Me.BindingNavigatorAddNewItem.RightToLeftAutoMirrorImage = True
+        Me.BindingNavigatorAddNewItem.Size = New System.Drawing.Size(28, 28)
+        Me.BindingNavigatorAddNewItem.Text = "Add new"
+        '
+        'BindingNavigatorCountItem
+        '
+        Me.BindingNavigatorCountItem.Name = "BindingNavigatorCountItem"
+        Me.BindingNavigatorCountItem.Size = New System.Drawing.Size(54, 28)
+        Me.BindingNavigatorCountItem.Text = "of {0}"
+        Me.BindingNavigatorCountItem.ToolTipText = "Total number of items"
+        '
+        'BindingNavigatorDeleteItem
+        '
+        Me.BindingNavigatorDeleteItem.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image
+        Me.BindingNavigatorDeleteItem.Image = CType(resources.GetObject("BindingNavigatorDeleteItem.Image"), System.Drawing.Image)
+        Me.BindingNavigatorDeleteItem.Name = "BindingNavigatorDeleteItem"
+        Me.BindingNavigatorDeleteItem.RightToLeftAutoMirrorImage = True
+        Me.BindingNavigatorDeleteItem.Size = New System.Drawing.Size(28, 28)
+        Me.BindingNavigatorDeleteItem.Text = "Delete"
+        '
         'BindingNavigatorMoveFirstItem
         '
         Me.BindingNavigatorMoveFirstItem.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image
         Me.BindingNavigatorMoveFirstItem.Image = CType(resources.GetObject("BindingNavigatorMoveFirstItem.Image"), System.Drawing.Image)
         Me.BindingNavigatorMoveFirstItem.Name = "BindingNavigatorMoveFirstItem"
         Me.BindingNavigatorMoveFirstItem.RightToLeftAutoMirrorImage = True
-        Me.BindingNavigatorMoveFirstItem.Size = New System.Drawing.Size(28, 22)
+        Me.BindingNavigatorMoveFirstItem.Size = New System.Drawing.Size(28, 28)
         Me.BindingNavigatorMoveFirstItem.Text = "Move first"
         '
         'BindingNavigatorMovePreviousItem
@@ -115,13 +177,13 @@ Partial Class frmArc
         Me.BindingNavigatorMovePreviousItem.Image = CType(resources.GetObject("BindingNavigatorMovePreviousItem.Image"), System.Drawing.Image)
         Me.BindingNavigatorMovePreviousItem.Name = "BindingNavigatorMovePreviousItem"
         Me.BindingNavigatorMovePreviousItem.RightToLeftAutoMirrorImage = True
-        Me.BindingNavigatorMovePreviousItem.Size = New System.Drawing.Size(28, 22)
+        Me.BindingNavigatorMovePreviousItem.Size = New System.Drawing.Size(28, 28)
         Me.BindingNavigatorMovePreviousItem.Text = "Move previous"
         '
         'BindingNavigatorSeparator
         '
         Me.BindingNavigatorSeparator.Name = "BindingNavigatorSeparator"
-        Me.BindingNavigatorSeparator.Size = New System.Drawing.Size(6, 25)
+        Me.BindingNavigatorSeparator.Size = New System.Drawing.Size(6, 31)
         '
         'BindingNavigatorPositionItem
         '
@@ -132,17 +194,10 @@ Partial Class frmArc
         Me.BindingNavigatorPositionItem.Text = "0"
         Me.BindingNavigatorPositionItem.ToolTipText = "Current position"
         '
-        'BindingNavigatorCountItem
-        '
-        Me.BindingNavigatorCountItem.Name = "BindingNavigatorCountItem"
-        Me.BindingNavigatorCountItem.Size = New System.Drawing.Size(54, 25)
-        Me.BindingNavigatorCountItem.Text = "of {0}"
-        Me.BindingNavigatorCountItem.ToolTipText = "Total number of items"
-        '
         'BindingNavigatorSeparator1
         '
-        Me.BindingNavigatorSeparator1.Name = "BindingNavigatorSeparator"
-        Me.BindingNavigatorSeparator1.Size = New System.Drawing.Size(6, 6)
+        Me.BindingNavigatorSeparator1.Name = "BindingNavigatorSeparator1"
+        Me.BindingNavigatorSeparator1.Size = New System.Drawing.Size(6, 31)
         '
         'BindingNavigatorMoveNextItem
         '
@@ -164,43 +219,16 @@ Partial Class frmArc
         '
         'BindingNavigatorSeparator2
         '
-        Me.BindingNavigatorSeparator2.Name = "BindingNavigatorSeparator"
-        Me.BindingNavigatorSeparator2.Size = New System.Drawing.Size(6, 6)
-        '
-        'BindingNavigatorAddNewItem
-        '
-        Me.BindingNavigatorAddNewItem.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image
-        Me.BindingNavigatorAddNewItem.Image = CType(resources.GetObject("BindingNavigatorAddNewItem.Image"), System.Drawing.Image)
-        Me.BindingNavigatorAddNewItem.Name = "BindingNavigatorAddNewItem"
-        Me.BindingNavigatorAddNewItem.RightToLeftAutoMirrorImage = True
-        Me.BindingNavigatorAddNewItem.Size = New System.Drawing.Size(28, 28)
-        Me.BindingNavigatorAddNewItem.Text = "Add new"
-        '
-        'BindingNavigatorDeleteItem
-        '
-        Me.BindingNavigatorDeleteItem.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image
-        Me.BindingNavigatorDeleteItem.Image = CType(resources.GetObject("BindingNavigatorDeleteItem.Image"), System.Drawing.Image)
-        Me.BindingNavigatorDeleteItem.Name = "BindingNavigatorDeleteItem"
-        Me.BindingNavigatorDeleteItem.RightToLeftAutoMirrorImage = True
-        Me.BindingNavigatorDeleteItem.Size = New System.Drawing.Size(28, 28)
-        Me.BindingNavigatorDeleteItem.Text = "Delete"
+        Me.BindingNavigatorSeparator2.Name = "BindingNavigatorSeparator2"
+        Me.BindingNavigatorSeparator2.Size = New System.Drawing.Size(6, 31)
         '
         'ArcsBindingNavigatorSaveItem
         '
         Me.ArcsBindingNavigatorSaveItem.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image
         Me.ArcsBindingNavigatorSaveItem.Image = CType(resources.GetObject("ArcsBindingNavigatorSaveItem.Image"), System.Drawing.Image)
         Me.ArcsBindingNavigatorSaveItem.Name = "ArcsBindingNavigatorSaveItem"
-        Me.ArcsBindingNavigatorSaveItem.Size = New System.Drawing.Size(23, 23)
+        Me.ArcsBindingNavigatorSaveItem.Size = New System.Drawing.Size(28, 28)
         Me.ArcsBindingNavigatorSaveItem.Text = "Save Data"
-        '
-        'TailLabel
-        '
-        TailLabel.AutoSize = True
-        TailLabel.Location = New System.Drawing.Point(153, 168)
-        TailLabel.Name = "TailLabel"
-        TailLabel.Size = New System.Drawing.Size(37, 20)
-        TailLabel.TabIndex = 1
-        TailLabel.Text = "Tail:"
         '
         'TailTextBox
         '
@@ -210,15 +238,6 @@ Partial Class frmArc
         Me.TailTextBox.Size = New System.Drawing.Size(100, 26)
         Me.TailTextBox.TabIndex = 2
         '
-        'HeadLabel
-        '
-        HeadLabel.AutoSize = True
-        HeadLabel.Location = New System.Drawing.Point(153, 200)
-        HeadLabel.Name = "HeadLabel"
-        HeadLabel.Size = New System.Drawing.Size(52, 20)
-        HeadLabel.TabIndex = 3
-        HeadLabel.Text = "Head:"
-        '
         'HeadTextBox
         '
         Me.HeadTextBox.DataBindings.Add(New System.Windows.Forms.Binding("Text", Me.ArcsBindingSource, "Head", True))
@@ -226,15 +245,6 @@ Partial Class frmArc
         Me.HeadTextBox.Name = "HeadTextBox"
         Me.HeadTextBox.Size = New System.Drawing.Size(100, 26)
         Me.HeadTextBox.TabIndex = 4
-        '
-        'DistanceLabel
-        '
-        DistanceLabel.AutoSize = True
-        DistanceLabel.Location = New System.Drawing.Point(153, 232)
-        DistanceLabel.Name = "DistanceLabel"
-        DistanceLabel.Size = New System.Drawing.Size(76, 20)
-        DistanceLabel.TabIndex = 5
-        DistanceLabel.Text = "Distance:"
         '
         'DistanceTextBox
         '
@@ -244,15 +254,6 @@ Partial Class frmArc
         Me.DistanceTextBox.Size = New System.Drawing.Size(100, 26)
         Me.DistanceTextBox.TabIndex = 6
         '
-        'CapacityLabel
-        '
-        CapacityLabel.AutoSize = True
-        CapacityLabel.Location = New System.Drawing.Point(153, 264)
-        CapacityLabel.Name = "CapacityLabel"
-        CapacityLabel.Size = New System.Drawing.Size(74, 20)
-        CapacityLabel.TabIndex = 7
-        CapacityLabel.Text = "Capacity:"
-        '
         'CapacityTextBox
         '
         Me.CapacityTextBox.DataBindings.Add(New System.Windows.Forms.Binding("Text", Me.ArcsBindingSource, "Capacity", True))
@@ -261,11 +262,21 @@ Partial Class frmArc
         Me.CapacityTextBox.Size = New System.Drawing.Size(100, 26)
         Me.CapacityTextBox.TabIndex = 8
         '
+        'btnUpdate
+        '
+        Me.btnUpdate.Location = New System.Drawing.Point(235, 308)
+        Me.btnUpdate.Name = "btnUpdate"
+        Me.btnUpdate.Size = New System.Drawing.Size(99, 28)
+        Me.btnUpdate.TabIndex = 9
+        Me.btnUpdate.Text = "Update"
+        Me.btnUpdate.UseVisualStyleBackColor = True
+        '
         'frmArc
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(9.0!, 20.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
         Me.ClientSize = New System.Drawing.Size(539, 497)
+        Me.Controls.Add(Me.btnUpdate)
         Me.Controls.Add(TailLabel)
         Me.Controls.Add(Me.TailTextBox)
         Me.Controls.Add(HeadLabel)
@@ -308,4 +319,5 @@ Partial Class frmArc
     Friend WithEvents HeadTextBox As TextBox
     Friend WithEvents DistanceTextBox As TextBox
     Friend WithEvents CapacityTextBox As TextBox
+    Friend WithEvents btnUpdate As Button
 End Class
