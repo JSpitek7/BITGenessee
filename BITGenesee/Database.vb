@@ -114,4 +114,8 @@ Public Class Database
             Return False
         End If
     End Function
+    'Function to write current database instance to XML file
+    Public Sub Export(filepath As String)
+        myDataSet.WriteXml(filepath, XmlWriteMode.WriteSchema)
+    End Sub
 End Class

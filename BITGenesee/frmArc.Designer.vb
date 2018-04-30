@@ -50,6 +50,11 @@ Partial Class frmArc
         Me.DistanceTextBox = New System.Windows.Forms.TextBox()
         Me.CapacityTextBox = New System.Windows.Forms.TextBox()
         Me.btnUpdate = New System.Windows.Forms.Button()
+        Me.txtSearch = New System.Windows.Forms.TextBox()
+        Me.lblSearch = New System.Windows.Forms.Label()
+        Me.TextBox1 = New System.Windows.Forms.TextBox()
+        Me.LblHead = New System.Windows.Forms.Label()
+        Me.lblTail = New System.Windows.Forms.Label()
         TailLabel = New System.Windows.Forms.Label()
         HeadLabel = New System.Windows.Forms.Label()
         DistanceLabel = New System.Windows.Forms.Label()
@@ -271,11 +276,57 @@ Partial Class frmArc
         Me.btnUpdate.Text = "Update"
         Me.btnUpdate.UseVisualStyleBackColor = True
         '
+        'txtSearch
+        '
+        Me.txtSearch.Location = New System.Drawing.Point(235, 89)
+        Me.txtSearch.Name = "txtSearch"
+        Me.txtSearch.Size = New System.Drawing.Size(100, 26)
+        Me.txtSearch.TabIndex = 10
+        '
+        'lblSearch
+        '
+        Me.lblSearch.AutoSize = True
+        Me.lblSearch.Location = New System.Drawing.Point(153, 89)
+        Me.lblSearch.Name = "lblSearch"
+        Me.lblSearch.Size = New System.Drawing.Size(60, 20)
+        Me.lblSearch.TabIndex = 11
+        Me.lblSearch.Text = "Search"
+        '
+        'TextBox1
+        '
+        Me.TextBox1.Location = New System.Drawing.Point(341, 89)
+        Me.TextBox1.Name = "TextBox1"
+        Me.TextBox1.Size = New System.Drawing.Size(100, 26)
+        Me.TextBox1.TabIndex = 12
+        '
+        'LblHead
+        '
+        Me.LblHead.AutoSize = True
+        Me.LblHead.Location = New System.Drawing.Point(241, 59)
+        Me.LblHead.Name = "LblHead"
+        Me.LblHead.Size = New System.Drawing.Size(48, 20)
+        Me.LblHead.TabIndex = 13
+        Me.LblHead.Text = "Head"
+        '
+        'lblTail
+        '
+        Me.lblTail.AutoSize = True
+        Me.lblTail.Location = New System.Drawing.Point(344, 56)
+        Me.lblTail.Name = "lblTail"
+        Me.lblTail.Size = New System.Drawing.Size(33, 20)
+        Me.lblTail.TabIndex = 14
+        Me.lblTail.Text = "Tail"
+        '
         'frmArc
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(9.0!, 20.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
         Me.ClientSize = New System.Drawing.Size(539, 497)
+        Me.Controls.Add(Me.lblTail)
+        Me.Controls.Add(Me.LblHead)
+        Me.Controls.Add(Me.TextBox1)
+        Me.Controls.Add(Me.lblSearch)
+        Me.Controls.Add(Me.txtSearch)
         Me.Controls.Add(Me.btnUpdate)
         Me.Controls.Add(TailLabel)
         Me.Controls.Add(Me.TailTextBox)
@@ -320,4 +371,9 @@ Partial Class frmArc
     Friend WithEvents DistanceTextBox As TextBox
     Friend WithEvents CapacityTextBox As TextBox
     Friend WithEvents btnUpdate As Button
+    Friend WithEvents txtSearch As TextBox
+    Friend WithEvents lblSearch As Label
+    Friend WithEvents TextBox1 As TextBox
+    Friend WithEvents LblHead As Label
+    Friend WithEvents lblTail As Label
 End Class

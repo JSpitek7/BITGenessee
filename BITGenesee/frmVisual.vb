@@ -80,13 +80,13 @@
         'sets product demand text box to node demand for selected product
         If Not lstProducts.SelectedItem = "" Then
             If solved Then
-                txtDemand.Text = data.GetDemand(net.NodeList(lstNodes.SelectedItem),
-                                                net.ProdList(lstProducts.SelectedItem))
+                txtDemand.Text = Math.Abs(data.GetDemand(net.NodeList(lstNodes.SelectedItem),
+                                                net.ProdList(lstProducts.SelectedItem)))
                 'sets satisfied demand text box to node satisfied demand for selected product
-                txtSatisfiedDemand.Text = opt.SatisfiedNodeDem(lstNodes.SelectedItem & lstProducts.SelectedItem)
+                txtSatisfiedDemand.Text = Math.Abs(opt.SatisfiedNodeDem(lstNodes.SelectedItem & lstProducts.SelectedItem))
             Else
-                txtDemand.Text = data.GetDemand(nodesList(lstNodes.SelectedItem),
-                                                prodsList(lstProducts.SelectedItem))
+                txtDemand.Text = Math.Abs(data.GetDemand(nodesList(lstNodes.SelectedItem),
+                                                prodsList(lstProducts.SelectedItem)))
                 txtSatisfiedDemand.Text = 0
             End If
 
@@ -99,13 +99,13 @@
         'sets text box to node demand for selected product
         'first checks to see if model has been solved to get most accurate data
         If solved Then
-            txtDemand.Text = data.GetDemand(net.NodeList(lstNodes.SelectedItem),
-                                        net.ProdList(lstProducts.SelectedItem))
+            txtDemand.Text = Math.Abs(data.GetDemand(net.NodeList(lstNodes.SelectedItem),
+                                        net.ProdList(lstProducts.SelectedItem)))
             'sets satisfied demand text box to node satisfied demand for selected product
-            txtSatisfiedDemand.Text = opt.SatisfiedNodeDem(lstNodes.SelectedItem & lstProducts.SelectedItem)
+            txtSatisfiedDemand.Text = Math.Abs(opt.SatisfiedNodeDem(lstNodes.SelectedItem & lstProducts.SelectedItem))
         Else
-            txtDemand.Text = data.GetDemand(nodesList(lstNodes.SelectedItem),
-                                             prodsList(lstProducts.SelectedItem))
+            txtDemand.Text = Math.Abs(data.GetDemand(nodesList(lstNodes.SelectedItem),
+                                             prodsList(lstProducts.SelectedItem)))
             txtSatisfiedDemand.Text = 0
         End If
 
@@ -231,5 +231,27 @@
         nodesList = dbnew.GetNodes()
         arcsList = dbnew.GetArcs(nodesList)
         prodsList = dbnew.GetProducts()
+    End Sub
+    ' Exports the data in an XML file when clicked
+    Private Sub BtnExport_Click(sender As Object, e As EventArgs) Handles BtnExport.Click
+        Dim folder As New FolderBrowserDialog
+        Dim filepath As String
+        If folder.ShowDialog = Windows.Forms.DialogResult.OK Then
+            filepath = folder.SelectedPath & "\Database.xml"
+        End If
+        Try
+            If filepath IsNot Nothing Then
+                If dbnew Is Nothing Then
+                    data.Export(filepath)
+                Else
+                    dbnew.Export(filepath)
+                End If
+            Else
+                Throw New Exception("Select a folder.")
+            End If
+        Catch ex As Exception
+
+        End Try
+
     End Sub
 End Class

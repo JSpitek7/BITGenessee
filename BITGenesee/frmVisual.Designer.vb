@@ -43,7 +43,7 @@ Partial Class frmVisual
         Me.cbxSelected = New System.Windows.Forms.CheckBox()
         Me.btnArc = New System.Windows.Forms.Button()
         Me.btnShowMap = New System.Windows.Forms.Button()
-        Me.BtnUpdate = New System.Windows.Forms.Button()
+        Me.BtnExport = New System.Windows.Forms.Button()
         Me.SuspendLayout()
         '
         'lstNodes
@@ -239,21 +239,21 @@ Partial Class frmVisual
         Me.btnShowMap.Text = "Show Map Form"
         Me.btnShowMap.UseVisualStyleBackColor = True
         '
-        'BtnUpdate
+        'BtnExport
         '
-        Me.BtnUpdate.Location = New System.Drawing.Point(28, 778)
-        Me.BtnUpdate.Name = "BtnUpdate"
-        Me.BtnUpdate.Size = New System.Drawing.Size(285, 28)
-        Me.BtnUpdate.TabIndex = 22
-        Me.BtnUpdate.Text = "Update Database"
-        Me.BtnUpdate.UseVisualStyleBackColor = True
+        Me.BtnExport.Location = New System.Drawing.Point(28, 778)
+        Me.BtnExport.Name = "BtnExport"
+        Me.BtnExport.Size = New System.Drawing.Size(285, 28)
+        Me.BtnExport.TabIndex = 22
+        Me.BtnExport.Text = "Export Database"
+        Me.BtnExport.UseVisualStyleBackColor = True
         '
         'frmVisual
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(9.0!, 20.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
         Me.ClientSize = New System.Drawing.Size(638, 818)
-        Me.Controls.Add(Me.BtnUpdate)
+        Me.Controls.Add(Me.BtnExport)
         Me.Controls.Add(Me.btnShowMap)
         Me.Controls.Add(Me.btnArc)
         Me.Controls.Add(Me.cbxSelected)
@@ -303,5 +303,5 @@ Partial Class frmVisual
     Friend WithEvents cbxSelected As CheckBox
     Friend WithEvents btnArc As Button
     Friend WithEvents btnShowMap As Button
-    Friend WithEvents BtnUpdate As Button
+    Friend WithEvents BtnExport As Button
 End Class

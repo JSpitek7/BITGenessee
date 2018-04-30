@@ -29,29 +29,29 @@ Partial Class frmMap
         'cboProduct
         '
         Me.cboProduct.FormattingEnabled = True
-        Me.cboProduct.Location = New System.Drawing.Point(484, 11)
-        Me.cboProduct.Margin = New System.Windows.Forms.Padding(2)
+        Me.cboProduct.Location = New System.Drawing.Point(726, 17)
         Me.cboProduct.Name = "cboProduct"
-        Me.cboProduct.Size = New System.Drawing.Size(106, 21)
+        Me.cboProduct.Size = New System.Drawing.Size(157, 28)
         Me.cboProduct.TabIndex = 7
         '
         'Label3
         '
         Me.Label3.AutoSize = True
-        Me.Label3.Location = New System.Drawing.Point(437, 11)
-        Me.Label3.Margin = New System.Windows.Forms.Padding(2, 0, 2, 0)
+        Me.Label3.Location = New System.Drawing.Point(656, 17)
         Me.Label3.Name = "Label3"
-        Me.Label3.Size = New System.Drawing.Size(44, 13)
+        Me.Label3.Size = New System.Drawing.Size(64, 20)
         Me.Label3.TabIndex = 6
         Me.Label3.Text = "Product"
         '
         'frmMap
         '
-        Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
+        Me.AutoScaleDimensions = New System.Drawing.SizeF(9.0!, 20.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
-        Me.ClientSize = New System.Drawing.Size(601, 398)
+        Me.ClientSize = New System.Drawing.Size(902, 612)
         Me.Controls.Add(Me.cboProduct)
         Me.Controls.Add(Me.Label3)
+        Me.Margin = New System.Windows.Forms.Padding(4, 5, 4, 5)
+        Me.MinimizeBox = False
         Me.Name = "frmMap"
         Me.Text = "Map"
         Me.ResumeLayout(False)

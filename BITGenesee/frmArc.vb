@@ -24,4 +24,9 @@
             MsgBox("Update Error")
         End Try
     End Sub
+
+    Private Sub txtSearch_TextChanged(sender As Object, e As EventArgs) Handles txtSearch.TextChanged
+        Dim search As String = txtSearch.Text
+
+    End Sub
 End Class
