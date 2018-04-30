@@ -43,152 +43,169 @@ Partial Class frmVisual
         Me.cbxSelected = New System.Windows.Forms.CheckBox()
         Me.btnArc = New System.Windows.Forms.Button()
         Me.btnShowMap = New System.Windows.Forms.Button()
+        Me.BtnUpdate = New System.Windows.Forms.Button()
         Me.SuspendLayout()
         '
         'lstNodes
         '
         Me.lstNodes.FormattingEnabled = True
-        Me.lstNodes.Location = New System.Drawing.Point(19, 7)
+        Me.lstNodes.ItemHeight = 20
+        Me.lstNodes.Location = New System.Drawing.Point(28, 11)
+        Me.lstNodes.Margin = New System.Windows.Forms.Padding(4, 5, 4, 5)
         Me.lstNodes.Name = "lstNodes"
-        Me.lstNodes.Size = New System.Drawing.Size(121, 238)
+        Me.lstNodes.Size = New System.Drawing.Size(180, 364)
         Me.lstNodes.TabIndex = 0
         '
         'trvArcs
         '
-        Me.trvArcs.Location = New System.Drawing.Point(226, 7)
+        Me.trvArcs.Location = New System.Drawing.Point(339, 11)
+        Me.trvArcs.Margin = New System.Windows.Forms.Padding(4, 5, 4, 5)
         Me.trvArcs.Name = "trvArcs"
-        Me.trvArcs.Size = New System.Drawing.Size(170, 238)
+        Me.trvArcs.Size = New System.Drawing.Size(253, 364)
         Me.trvArcs.TabIndex = 1
         '
         'txtCost
         '
-        Me.txtCost.Location = New System.Drawing.Point(276, 264)
+        Me.txtCost.Location = New System.Drawing.Point(414, 406)
+        Me.txtCost.Margin = New System.Windows.Forms.Padding(4, 5, 4, 5)
         Me.txtCost.Name = "txtCost"
-        Me.txtCost.Size = New System.Drawing.Size(120, 20)
+        Me.txtCost.Size = New System.Drawing.Size(178, 26)
         Me.txtCost.TabIndex = 2
         '
         'lstProducts
         '
         Me.lstProducts.FormattingEnabled = True
-        Me.lstProducts.Location = New System.Drawing.Point(19, 264)
+        Me.lstProducts.ItemHeight = 20
+        Me.lstProducts.Location = New System.Drawing.Point(28, 406)
+        Me.lstProducts.Margin = New System.Windows.Forms.Padding(4, 5, 4, 5)
         Me.lstProducts.Name = "lstProducts"
-        Me.lstProducts.Size = New System.Drawing.Size(120, 95)
+        Me.lstProducts.Size = New System.Drawing.Size(178, 144)
         Me.lstProducts.TabIndex = 3
         '
         'txtCapacity
         '
-        Me.txtCapacity.Location = New System.Drawing.Point(276, 290)
+        Me.txtCapacity.Location = New System.Drawing.Point(414, 446)
+        Me.txtCapacity.Margin = New System.Windows.Forms.Padding(4, 5, 4, 5)
         Me.txtCapacity.Name = "txtCapacity"
-        Me.txtCapacity.Size = New System.Drawing.Size(120, 20)
+        Me.txtCapacity.Size = New System.Drawing.Size(178, 26)
         Me.txtCapacity.TabIndex = 4
         '
         'txtFlow
         '
-        Me.txtFlow.Location = New System.Drawing.Point(276, 316)
+        Me.txtFlow.Location = New System.Drawing.Point(414, 486)
+        Me.txtFlow.Margin = New System.Windows.Forms.Padding(4, 5, 4, 5)
         Me.txtFlow.Name = "txtFlow"
-        Me.txtFlow.Size = New System.Drawing.Size(120, 20)
+        Me.txtFlow.Size = New System.Drawing.Size(178, 26)
         Me.txtFlow.TabIndex = 5
         '
         'txtDemand
         '
-        Me.txtDemand.Location = New System.Drawing.Point(109, 365)
+        Me.txtDemand.Location = New System.Drawing.Point(164, 562)
+        Me.txtDemand.Margin = New System.Windows.Forms.Padding(4, 5, 4, 5)
         Me.txtDemand.Name = "txtDemand"
-        Me.txtDemand.Size = New System.Drawing.Size(100, 20)
+        Me.txtDemand.Size = New System.Drawing.Size(148, 26)
         Me.txtDemand.TabIndex = 6
         '
         'btnSolve
         '
-        Me.btnSolve.Location = New System.Drawing.Point(19, 394)
+        Me.btnSolve.Location = New System.Drawing.Point(28, 606)
+        Me.btnSolve.Margin = New System.Windows.Forms.Padding(4, 5, 4, 5)
         Me.btnSolve.Name = "btnSolve"
-        Me.btnSolve.Size = New System.Drawing.Size(190, 23)
+        Me.btnSolve.Size = New System.Drawing.Size(285, 35)
         Me.btnSolve.TabIndex = 7
         Me.btnSolve.Text = "Solve LP Model"
         Me.btnSolve.UseVisualStyleBackColor = True
         '
         'txtTotalCost
         '
-        Me.txtTotalCost.Location = New System.Drawing.Point(109, 450)
+        Me.txtTotalCost.Location = New System.Drawing.Point(164, 692)
+        Me.txtTotalCost.Margin = New System.Windows.Forms.Padding(4, 5, 4, 5)
         Me.txtTotalCost.Name = "txtTotalCost"
-        Me.txtTotalCost.Size = New System.Drawing.Size(100, 20)
+        Me.txtTotalCost.Size = New System.Drawing.Size(148, 26)
         Me.txtTotalCost.TabIndex = 8
         '
         'Label1
         '
         Me.Label1.AutoSize = True
-        Me.Label1.Location = New System.Drawing.Point(16, 453)
+        Me.Label1.Location = New System.Drawing.Point(24, 697)
+        Me.Label1.Margin = New System.Windows.Forms.Padding(4, 0, 4, 0)
         Me.Label1.Name = "Label1"
-        Me.Label1.Size = New System.Drawing.Size(55, 13)
+        Me.Label1.Size = New System.Drawing.Size(81, 20)
         Me.Label1.TabIndex = 9
         Me.Label1.Text = "Total Cost"
         '
         'Label2
         '
         Me.Label2.AutoSize = True
-        Me.Label2.Location = New System.Drawing.Point(16, 368)
+        Me.Label2.Location = New System.Drawing.Point(24, 566)
+        Me.Label2.Margin = New System.Windows.Forms.Padding(4, 0, 4, 0)
         Me.Label2.Name = "Label2"
-        Me.Label2.Size = New System.Drawing.Size(87, 13)
+        Me.Label2.Size = New System.Drawing.Size(129, 20)
         Me.Label2.TabIndex = 10
         Me.Label2.Text = "Product Demand"
         '
         'Label3
         '
         Me.Label3.AutoSize = True
-        Me.Label3.Location = New System.Drawing.Point(182, 267)
+        Me.Label3.Location = New System.Drawing.Point(273, 411)
+        Me.Label3.Margin = New System.Windows.Forms.Padding(4, 0, 4, 0)
         Me.Label3.Name = "Label3"
-        Me.Label3.Size = New System.Drawing.Size(88, 13)
+        Me.Label3.Size = New System.Drawing.Size(130, 20)
         Me.Label3.TabIndex = 11
         Me.Label3.Text = "Arc Cost Per Mile"
         '
         'Label4
         '
         Me.Label4.AutoSize = True
-        Me.Label4.Location = New System.Drawing.Point(150, 293)
+        Me.Label4.Location = New System.Drawing.Point(225, 451)
+        Me.Label4.Margin = New System.Windows.Forms.Padding(4, 0, 4, 0)
         Me.Label4.Name = "Label4"
-        Me.Label4.Size = New System.Drawing.Size(120, 13)
+        Me.Label4.Size = New System.Drawing.Size(178, 20)
         Me.Label4.TabIndex = 12
         Me.Label4.Text = "Remaining Arc Capacity"
         '
         'Label5
         '
         Me.Label5.AutoSize = True
-        Me.Label5.Location = New System.Drawing.Point(201, 319)
+        Me.Label5.Location = New System.Drawing.Point(302, 491)
+        Me.Label5.Margin = New System.Windows.Forms.Padding(4, 0, 4, 0)
         Me.Label5.Name = "Label5"
-        Me.Label5.Size = New System.Drawing.Size(69, 13)
+        Me.Label5.Size = New System.Drawing.Size(101, 20)
         Me.Label5.TabIndex = 13
         Me.Label5.Text = "Product Flow"
         '
         'Label6
         '
         Me.Label6.AutoSize = True
-        Me.Label6.Location = New System.Drawing.Point(16, 481)
+        Me.Label6.Location = New System.Drawing.Point(24, 740)
+        Me.Label6.Margin = New System.Windows.Forms.Padding(4, 0, 4, 0)
         Me.Label6.Name = "Label6"
-        Me.Label6.Size = New System.Drawing.Size(90, 13)
+        Me.Label6.Size = New System.Drawing.Size(136, 20)
         Me.Label6.TabIndex = 14
         Me.Label6.Text = "Satisfied Demand"
         '
         'txtSatisfiedDemand
         '
-        Me.txtSatisfiedDemand.Location = New System.Drawing.Point(109, 478)
+        Me.txtSatisfiedDemand.Location = New System.Drawing.Point(164, 735)
+        Me.txtSatisfiedDemand.Margin = New System.Windows.Forms.Padding(4, 5, 4, 5)
         Me.txtSatisfiedDemand.Name = "txtSatisfiedDemand"
-        Me.txtSatisfiedDemand.Size = New System.Drawing.Size(100, 20)
+        Me.txtSatisfiedDemand.Size = New System.Drawing.Size(148, 26)
         Me.txtSatisfiedDemand.TabIndex = 15
         '
         'btnNodes
         '
-        Me.btnNodes.Location = New System.Drawing.Point(258, 357)
-        Me.btnNodes.Margin = New System.Windows.Forms.Padding(2, 2, 2, 2)
+        Me.btnNodes.Location = New System.Drawing.Point(387, 549)
         Me.btnNodes.Name = "btnNodes"
-        Me.btnNodes.Size = New System.Drawing.Size(137, 24)
+        Me.btnNodes.Size = New System.Drawing.Size(206, 37)
         Me.btnNodes.TabIndex = 16
         Me.btnNodes.Text = "Show Nodes Form"
         Me.btnNodes.UseVisualStyleBackColor = True
         '
         'btnProduct
         '
-        Me.btnProduct.Location = New System.Drawing.Point(257, 394)
-        Me.btnProduct.Margin = New System.Windows.Forms.Padding(2, 2, 2, 2)
+        Me.btnProduct.Location = New System.Drawing.Point(386, 606)
         Me.btnProduct.Name = "btnProduct"
-        Me.btnProduct.Size = New System.Drawing.Size(137, 24)
+        Me.btnProduct.Size = New System.Drawing.Size(206, 37)
         Me.btnProduct.TabIndex = 17
         Me.btnProduct.Text = "Show Products Form"
         Me.btnProduct.UseVisualStyleBackColor = True
@@ -196,38 +213,47 @@ Partial Class frmVisual
         'cbxSelected
         '
         Me.cbxSelected.AutoSize = True
-        Me.cbxSelected.Location = New System.Drawing.Point(19, 424)
+        Me.cbxSelected.Location = New System.Drawing.Point(28, 652)
+        Me.cbxSelected.Margin = New System.Windows.Forms.Padding(4, 5, 4, 5)
         Me.cbxSelected.Name = "cbxSelected"
-        Me.cbxSelected.Size = New System.Drawing.Size(172, 17)
+        Me.cbxSelected.Size = New System.Drawing.Size(251, 24)
         Me.cbxSelected.TabIndex = 18
         Me.cbxSelected.Text = "Solve for selected product only"
         Me.cbxSelected.UseVisualStyleBackColor = True
         '
         'btnArc
         '
-        Me.btnArc.Location = New System.Drawing.Point(257, 432)
-        Me.btnArc.Margin = New System.Windows.Forms.Padding(2, 2, 2, 2)
+        Me.btnArc.Location = New System.Drawing.Point(386, 665)
         Me.btnArc.Name = "btnArc"
-        Me.btnArc.Size = New System.Drawing.Size(137, 24)
+        Me.btnArc.Size = New System.Drawing.Size(206, 37)
         Me.btnArc.TabIndex = 20
         Me.btnArc.Text = "Show Arc Form"
         Me.btnArc.UseVisualStyleBackColor = True
         '
         'btnShowMap
         '
-        Me.btnShowMap.Location = New System.Drawing.Point(257, 470)
-        Me.btnShowMap.Margin = New System.Windows.Forms.Padding(2)
+        Me.btnShowMap.Location = New System.Drawing.Point(386, 723)
         Me.btnShowMap.Name = "btnShowMap"
-        Me.btnShowMap.Size = New System.Drawing.Size(137, 24)
+        Me.btnShowMap.Size = New System.Drawing.Size(206, 37)
         Me.btnShowMap.TabIndex = 21
         Me.btnShowMap.Text = "Show Map Form"
         Me.btnShowMap.UseVisualStyleBackColor = True
         '
+        'BtnUpdate
+        '
+        Me.BtnUpdate.Location = New System.Drawing.Point(28, 778)
+        Me.BtnUpdate.Name = "BtnUpdate"
+        Me.BtnUpdate.Size = New System.Drawing.Size(285, 28)
+        Me.BtnUpdate.TabIndex = 22
+        Me.BtnUpdate.Text = "Update Database"
+        Me.BtnUpdate.UseVisualStyleBackColor = True
+        '
         'frmVisual
         '
-        Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
+        Me.AutoScaleDimensions = New System.Drawing.SizeF(9.0!, 20.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
-        Me.ClientSize = New System.Drawing.Size(425, 532)
+        Me.ClientSize = New System.Drawing.Size(638, 818)
+        Me.Controls.Add(Me.BtnUpdate)
         Me.Controls.Add(Me.btnShowMap)
         Me.Controls.Add(Me.btnArc)
         Me.Controls.Add(Me.cbxSelected)
@@ -249,7 +275,6 @@ Partial Class frmVisual
         Me.Controls.Add(Me.txtCost)
         Me.Controls.Add(Me.trvArcs)
         Me.Controls.Add(Me.lstNodes)
-        Me.Margin = New System.Windows.Forms.Padding(2, 2, 2, 2)
         Me.Name = "frmVisual"
         Me.Text = "Network"
         Me.ResumeLayout(False)
@@ -278,4 +303,5 @@ Partial Class frmVisual
     Friend WithEvents cbxSelected As CheckBox
     Friend WithEvents btnArc As Button
     Friend WithEvents btnShowMap As Button
+    Friend WithEvents BtnUpdate As Button
 End Class

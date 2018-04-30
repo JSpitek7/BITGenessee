@@ -13,4 +13,15 @@
     Private Sub BindingNavigatorMoveNextItem_Click(sender As Object, e As EventArgs) Handles BindingNavigatorMoveNextItem.Click
 
     End Sub
+
+    Private Sub btnUpdate_Click(sender As Object, e As EventArgs) Handles btnUpdate.Click
+        Try
+            Me.Validate()
+            Me.ArcsBindingSource.EndEdit()
+            Me.ArcsTableAdapter1.UpdateQuery(CDec(CapacityTextBox.Text), TailTextBox.Text, HeadTextBox.Text)
+            MsgBox("Update successful")
+        Catch ex As Exception
+            MsgBox("Update Error")
+        End Try
+    End Sub
 End Class
