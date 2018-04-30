@@ -22,6 +22,7 @@ Partial Class frmVisual
     'Do not modify it using the code editor.
     <System.Diagnostics.DebuggerStepThrough()> _
     Private Sub InitializeComponent()
+        Dim resources As System.ComponentModel.ComponentResourceManager = New System.ComponentModel.ComponentResourceManager(GetType(frmVisual))
         Me.lstNodes = New System.Windows.Forms.ListBox()
         Me.trvArcs = New System.Windows.Forms.TreeView()
         Me.txtCost = New System.Windows.Forms.TextBox()
@@ -31,12 +32,12 @@ Partial Class frmVisual
         Me.txtDemand = New System.Windows.Forms.TextBox()
         Me.btnSolve = New System.Windows.Forms.Button()
         Me.txtTotalCost = New System.Windows.Forms.TextBox()
-        Me.Label1 = New System.Windows.Forms.Label()
-        Me.Label2 = New System.Windows.Forms.Label()
-        Me.Label3 = New System.Windows.Forms.Label()
-        Me.Label4 = New System.Windows.Forms.Label()
-        Me.Label5 = New System.Windows.Forms.Label()
-        Me.Label6 = New System.Windows.Forms.Label()
+        Me.lblTotalCost = New System.Windows.Forms.Label()
+        Me.lblProdDem = New System.Windows.Forms.Label()
+        Me.lblArcCost = New System.Windows.Forms.Label()
+        Me.lblCapacity = New System.Windows.Forms.Label()
+        Me.LblProdFlow = New System.Windows.Forms.Label()
+        Me.lblSatisfiedDem = New System.Windows.Forms.Label()
         Me.txtSatisfiedDemand = New System.Windows.Forms.TextBox()
         Me.btnNodes = New System.Windows.Forms.Button()
         Me.btnProduct = New System.Windows.Forms.Button()
@@ -124,65 +125,65 @@ Partial Class frmVisual
         Me.txtTotalCost.Size = New System.Drawing.Size(148, 26)
         Me.txtTotalCost.TabIndex = 8
         '
-        'Label1
+        'lblTotalCost
         '
-        Me.Label1.AutoSize = True
-        Me.Label1.Location = New System.Drawing.Point(24, 697)
-        Me.Label1.Margin = New System.Windows.Forms.Padding(4, 0, 4, 0)
-        Me.Label1.Name = "Label1"
-        Me.Label1.Size = New System.Drawing.Size(81, 20)
-        Me.Label1.TabIndex = 9
-        Me.Label1.Text = "Total Cost"
+        Me.lblTotalCost.AutoSize = True
+        Me.lblTotalCost.Location = New System.Drawing.Point(24, 697)
+        Me.lblTotalCost.Margin = New System.Windows.Forms.Padding(4, 0, 4, 0)
+        Me.lblTotalCost.Name = "lblTotalCost"
+        Me.lblTotalCost.Size = New System.Drawing.Size(81, 20)
+        Me.lblTotalCost.TabIndex = 9
+        Me.lblTotalCost.Text = "Total Cost"
         '
-        'Label2
+        'lblProdDem
         '
-        Me.Label2.AutoSize = True
-        Me.Label2.Location = New System.Drawing.Point(24, 566)
-        Me.Label2.Margin = New System.Windows.Forms.Padding(4, 0, 4, 0)
-        Me.Label2.Name = "Label2"
-        Me.Label2.Size = New System.Drawing.Size(129, 20)
-        Me.Label2.TabIndex = 10
-        Me.Label2.Text = "Product Demand"
+        Me.lblProdDem.AutoSize = True
+        Me.lblProdDem.Location = New System.Drawing.Point(24, 566)
+        Me.lblProdDem.Margin = New System.Windows.Forms.Padding(4, 0, 4, 0)
+        Me.lblProdDem.Name = "lblProdDem"
+        Me.lblProdDem.Size = New System.Drawing.Size(129, 20)
+        Me.lblProdDem.TabIndex = 10
+        Me.lblProdDem.Text = "Product Demand"
         '
-        'Label3
+        'lblArcCost
         '
-        Me.Label3.AutoSize = True
-        Me.Label3.Location = New System.Drawing.Point(273, 411)
-        Me.Label3.Margin = New System.Windows.Forms.Padding(4, 0, 4, 0)
-        Me.Label3.Name = "Label3"
-        Me.Label3.Size = New System.Drawing.Size(130, 20)
-        Me.Label3.TabIndex = 11
-        Me.Label3.Text = "Arc Cost Per Mile"
+        Me.lblArcCost.AutoSize = True
+        Me.lblArcCost.Location = New System.Drawing.Point(273, 411)
+        Me.lblArcCost.Margin = New System.Windows.Forms.Padding(4, 0, 4, 0)
+        Me.lblArcCost.Name = "lblArcCost"
+        Me.lblArcCost.Size = New System.Drawing.Size(130, 20)
+        Me.lblArcCost.TabIndex = 11
+        Me.lblArcCost.Text = "Arc Cost Per Mile"
         '
-        'Label4
+        'lblCapacity
         '
-        Me.Label4.AutoSize = True
-        Me.Label4.Location = New System.Drawing.Point(225, 451)
-        Me.Label4.Margin = New System.Windows.Forms.Padding(4, 0, 4, 0)
-        Me.Label4.Name = "Label4"
-        Me.Label4.Size = New System.Drawing.Size(178, 20)
-        Me.Label4.TabIndex = 12
-        Me.Label4.Text = "Remaining Arc Capacity"
+        Me.lblCapacity.AutoSize = True
+        Me.lblCapacity.Location = New System.Drawing.Point(225, 451)
+        Me.lblCapacity.Margin = New System.Windows.Forms.Padding(4, 0, 4, 0)
+        Me.lblCapacity.Name = "lblCapacity"
+        Me.lblCapacity.Size = New System.Drawing.Size(178, 20)
+        Me.lblCapacity.TabIndex = 12
+        Me.lblCapacity.Text = "Remaining Arc Capacity"
         '
-        'Label5
+        'LblProdFlow
         '
-        Me.Label5.AutoSize = True
-        Me.Label5.Location = New System.Drawing.Point(302, 491)
-        Me.Label5.Margin = New System.Windows.Forms.Padding(4, 0, 4, 0)
-        Me.Label5.Name = "Label5"
-        Me.Label5.Size = New System.Drawing.Size(101, 20)
-        Me.Label5.TabIndex = 13
-        Me.Label5.Text = "Product Flow"
+        Me.LblProdFlow.AutoSize = True
+        Me.LblProdFlow.Location = New System.Drawing.Point(302, 491)
+        Me.LblProdFlow.Margin = New System.Windows.Forms.Padding(4, 0, 4, 0)
+        Me.LblProdFlow.Name = "LblProdFlow"
+        Me.LblProdFlow.Size = New System.Drawing.Size(101, 20)
+        Me.LblProdFlow.TabIndex = 13
+        Me.LblProdFlow.Text = "Product Flow"
         '
-        'Label6
+        'lblSatisfiedDem
         '
-        Me.Label6.AutoSize = True
-        Me.Label6.Location = New System.Drawing.Point(24, 740)
-        Me.Label6.Margin = New System.Windows.Forms.Padding(4, 0, 4, 0)
-        Me.Label6.Name = "Label6"
-        Me.Label6.Size = New System.Drawing.Size(136, 20)
-        Me.Label6.TabIndex = 14
-        Me.Label6.Text = "Satisfied Demand"
+        Me.lblSatisfiedDem.AutoSize = True
+        Me.lblSatisfiedDem.Location = New System.Drawing.Point(24, 740)
+        Me.lblSatisfiedDem.Margin = New System.Windows.Forms.Padding(4, 0, 4, 0)
+        Me.lblSatisfiedDem.Name = "lblSatisfiedDem"
+        Me.lblSatisfiedDem.Size = New System.Drawing.Size(136, 20)
+        Me.lblSatisfiedDem.TabIndex = 14
+        Me.lblSatisfiedDem.Text = "Satisfied Demand"
         '
         'txtSatisfiedDemand
         '
@@ -260,12 +261,12 @@ Partial Class frmVisual
         Me.Controls.Add(Me.btnProduct)
         Me.Controls.Add(Me.btnNodes)
         Me.Controls.Add(Me.txtSatisfiedDemand)
-        Me.Controls.Add(Me.Label6)
-        Me.Controls.Add(Me.Label5)
-        Me.Controls.Add(Me.Label4)
-        Me.Controls.Add(Me.Label3)
-        Me.Controls.Add(Me.Label2)
-        Me.Controls.Add(Me.Label1)
+        Me.Controls.Add(Me.lblSatisfiedDem)
+        Me.Controls.Add(Me.LblProdFlow)
+        Me.Controls.Add(Me.lblCapacity)
+        Me.Controls.Add(Me.lblArcCost)
+        Me.Controls.Add(Me.lblProdDem)
+        Me.Controls.Add(Me.lblTotalCost)
         Me.Controls.Add(Me.txtTotalCost)
         Me.Controls.Add(Me.btnSolve)
         Me.Controls.Add(Me.txtDemand)
@@ -275,6 +276,7 @@ Partial Class frmVisual
         Me.Controls.Add(Me.txtCost)
         Me.Controls.Add(Me.trvArcs)
         Me.Controls.Add(Me.lstNodes)
+        Me.Icon = CType(resources.GetObject("$this.Icon"), System.Drawing.Icon)
         Me.Name = "frmVisual"
         Me.Text = "Network"
         Me.ResumeLayout(False)
@@ -291,12 +293,12 @@ Partial Class frmVisual
     Friend WithEvents txtDemand As TextBox
     Friend WithEvents btnSolve As Button
     Friend WithEvents txtTotalCost As TextBox
-    Friend WithEvents Label1 As Label
-    Friend WithEvents Label2 As Label
-    Friend WithEvents Label3 As Label
-    Friend WithEvents Label4 As Label
-    Friend WithEvents Label5 As Label
-    Friend WithEvents Label6 As Label
+    Friend WithEvents lblTotalCost As Label
+    Friend WithEvents lblProdDem As Label
+    Friend WithEvents lblArcCost As Label
+    Friend WithEvents lblCapacity As Label
+    Friend WithEvents LblProdFlow As Label
+    Friend WithEvents lblSatisfiedDem As Label
     Friend WithEvents txtSatisfiedDemand As TextBox
     Friend WithEvents btnNodes As Button
     Friend WithEvents btnProduct As Button

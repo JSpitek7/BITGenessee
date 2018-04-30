@@ -28,10 +28,6 @@ Partial Class frmArc
         Dim DistanceLabel As System.Windows.Forms.Label
         Dim CapacityLabel As System.Windows.Forms.Label
         Dim resources As System.ComponentModel.ComponentResourceManager = New System.ComponentModel.ComponentResourceManager(GetType(frmArc))
-        Me.DatabaseDataSet1 = New BITGenesee.DatabaseDataSet()
-        Me.ArcsTableAdapter1 = New BITGenesee.DatabaseDataSetTableAdapters.ArcsTableAdapter()
-        Me.ArcsBindingSource = New System.Windows.Forms.BindingSource(Me.components)
-        Me.TableAdapterManager = New BITGenesee.DatabaseDataSetTableAdapters.TableAdapterManager()
         Me.ArcsBindingNavigator = New System.Windows.Forms.BindingNavigator(Me.components)
         Me.BindingNavigatorAddNewItem = New System.Windows.Forms.ToolStripButton()
         Me.BindingNavigatorCountItem = New System.Windows.Forms.ToolStripLabel()
@@ -50,19 +46,25 @@ Partial Class frmArc
         Me.DistanceTextBox = New System.Windows.Forms.TextBox()
         Me.CapacityTextBox = New System.Windows.Forms.TextBox()
         Me.btnUpdate = New System.Windows.Forms.Button()
-        Me.txtSearch = New System.Windows.Forms.TextBox()
-        Me.lblSearch = New System.Windows.Forms.Label()
-        Me.TextBox1 = New System.Windows.Forms.TextBox()
-        Me.LblHead = New System.Windows.Forms.Label()
-        Me.lblTail = New System.Windows.Forms.Label()
+        Me.FindArcToolStrip = New System.Windows.Forms.ToolStrip()
+        Me.HeadToolStripLabel = New System.Windows.Forms.ToolStripLabel()
+        Me.HeadToolStripTextBox = New System.Windows.Forms.ToolStripTextBox()
+        Me.TailToolStripLabel = New System.Windows.Forms.ToolStripLabel()
+        Me.TailToolStripTextBox = New System.Windows.Forms.ToolStripTextBox()
+        Me.FindArcToolStripButton = New System.Windows.Forms.ToolStripButton()
+        Me.ArcsBindingSource = New System.Windows.Forms.BindingSource(Me.components)
+        Me.DatabaseDataSet1 = New BITGenesee.DatabaseDataSet()
+        Me.ArcsTableAdapter1 = New BITGenesee.DatabaseDataSetTableAdapters.ArcsTableAdapter()
+        Me.TableAdapterManager = New BITGenesee.DatabaseDataSetTableAdapters.TableAdapterManager()
         TailLabel = New System.Windows.Forms.Label()
         HeadLabel = New System.Windows.Forms.Label()
         DistanceLabel = New System.Windows.Forms.Label()
         CapacityLabel = New System.Windows.Forms.Label()
-        CType(Me.DatabaseDataSet1, System.ComponentModel.ISupportInitialize).BeginInit()
-        CType(Me.ArcsBindingSource, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.ArcsBindingNavigator, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.ArcsBindingNavigator.SuspendLayout()
+        Me.FindArcToolStrip.SuspendLayout()
+        CType(Me.ArcsBindingSource, System.ComponentModel.ISupportInitialize).BeginInit()
+        CType(Me.DatabaseDataSet1, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.SuspendLayout()
         '
         'TailLabel
@@ -100,28 +102,6 @@ Partial Class frmArc
         CapacityLabel.Size = New System.Drawing.Size(74, 20)
         CapacityLabel.TabIndex = 7
         CapacityLabel.Text = "Capacity:"
-        '
-        'DatabaseDataSet1
-        '
-        Me.DatabaseDataSet1.DataSetName = "DatabaseDataSet"
-        Me.DatabaseDataSet1.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema
-        '
-        'ArcsTableAdapter1
-        '
-        Me.ArcsTableAdapter1.ClearBeforeFill = True
-        '
-        'ArcsBindingSource
-        '
-        Me.ArcsBindingSource.DataMember = "Arcs"
-        Me.ArcsBindingSource.DataSource = Me.DatabaseDataSet1
-        '
-        'TableAdapterManager
-        '
-        Me.TableAdapterManager.ArcsTableAdapter = Me.ArcsTableAdapter1
-        Me.TableAdapterManager.BackupDataSetBeforeUpdate = False
-        Me.TableAdapterManager.NodesTableAdapter = Nothing
-        Me.TableAdapterManager.ProductsTableAdapter = Nothing
-        Me.TableAdapterManager.UpdateOrder = BITGenesee.DatabaseDataSetTableAdapters.TableAdapterManager.UpdateOrderOption.InsertUpdateDelete
         '
         'ArcsBindingNavigator
         '
@@ -276,57 +256,73 @@ Partial Class frmArc
         Me.btnUpdate.Text = "Update"
         Me.btnUpdate.UseVisualStyleBackColor = True
         '
-        'txtSearch
+        'FindArcToolStrip
         '
-        Me.txtSearch.Location = New System.Drawing.Point(235, 89)
-        Me.txtSearch.Name = "txtSearch"
-        Me.txtSearch.Size = New System.Drawing.Size(100, 26)
-        Me.txtSearch.TabIndex = 10
+        Me.FindArcToolStrip.ImageScalingSize = New System.Drawing.Size(24, 24)
+        Me.FindArcToolStrip.Items.AddRange(New System.Windows.Forms.ToolStripItem() {Me.HeadToolStripLabel, Me.HeadToolStripTextBox, Me.TailToolStripLabel, Me.TailToolStripTextBox, Me.FindArcToolStripButton})
+        Me.FindArcToolStrip.Location = New System.Drawing.Point(0, 31)
+        Me.FindArcToolStrip.Name = "FindArcToolStrip"
+        Me.FindArcToolStrip.Size = New System.Drawing.Size(539, 32)
+        Me.FindArcToolStrip.TabIndex = 16
+        Me.FindArcToolStrip.Text = "FindArcToolStrip"
         '
-        'lblSearch
+        'HeadToolStripLabel
         '
-        Me.lblSearch.AutoSize = True
-        Me.lblSearch.Location = New System.Drawing.Point(153, 89)
-        Me.lblSearch.Name = "lblSearch"
-        Me.lblSearch.Size = New System.Drawing.Size(60, 20)
-        Me.lblSearch.TabIndex = 11
-        Me.lblSearch.Text = "Search"
+        Me.HeadToolStripLabel.Name = "HeadToolStripLabel"
+        Me.HeadToolStripLabel.Size = New System.Drawing.Size(58, 29)
+        Me.HeadToolStripLabel.Text = "Head:"
         '
-        'TextBox1
+        'HeadToolStripTextBox
         '
-        Me.TextBox1.Location = New System.Drawing.Point(341, 89)
-        Me.TextBox1.Name = "TextBox1"
-        Me.TextBox1.Size = New System.Drawing.Size(100, 26)
-        Me.TextBox1.TabIndex = 12
+        Me.HeadToolStripTextBox.Name = "HeadToolStripTextBox"
+        Me.HeadToolStripTextBox.Size = New System.Drawing.Size(100, 32)
         '
-        'LblHead
+        'TailToolStripLabel
         '
-        Me.LblHead.AutoSize = True
-        Me.LblHead.Location = New System.Drawing.Point(241, 59)
-        Me.LblHead.Name = "LblHead"
-        Me.LblHead.Size = New System.Drawing.Size(48, 20)
-        Me.LblHead.TabIndex = 13
-        Me.LblHead.Text = "Head"
+        Me.TailToolStripLabel.Name = "TailToolStripLabel"
+        Me.TailToolStripLabel.Size = New System.Drawing.Size(40, 29)
+        Me.TailToolStripLabel.Text = "Tail:"
         '
-        'lblTail
+        'TailToolStripTextBox
         '
-        Me.lblTail.AutoSize = True
-        Me.lblTail.Location = New System.Drawing.Point(344, 56)
-        Me.lblTail.Name = "lblTail"
-        Me.lblTail.Size = New System.Drawing.Size(33, 20)
-        Me.lblTail.TabIndex = 14
-        Me.lblTail.Text = "Tail"
+        Me.TailToolStripTextBox.Name = "TailToolStripTextBox"
+        Me.TailToolStripTextBox.Size = New System.Drawing.Size(100, 32)
+        '
+        'FindArcToolStripButton
+        '
+        Me.FindArcToolStripButton.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Text
+        Me.FindArcToolStripButton.Name = "FindArcToolStripButton"
+        Me.FindArcToolStripButton.Size = New System.Drawing.Size(76, 29)
+        Me.FindArcToolStripButton.Text = "FindArc"
+        '
+        'ArcsBindingSource
+        '
+        Me.ArcsBindingSource.DataMember = "Arcs"
+        Me.ArcsBindingSource.DataSource = Me.DatabaseDataSet1
+        '
+        'DatabaseDataSet1
+        '
+        Me.DatabaseDataSet1.DataSetName = "DatabaseDataSet"
+        Me.DatabaseDataSet1.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema
+        '
+        'ArcsTableAdapter1
+        '
+        Me.ArcsTableAdapter1.ClearBeforeFill = True
+        '
+        'TableAdapterManager
+        '
+        Me.TableAdapterManager.ArcsTableAdapter = Me.ArcsTableAdapter1
+        Me.TableAdapterManager.BackupDataSetBeforeUpdate = False
+        Me.TableAdapterManager.NodesTableAdapter = Nothing
+        Me.TableAdapterManager.ProductsTableAdapter = Nothing
+        Me.TableAdapterManager.UpdateOrder = BITGenesee.DatabaseDataSetTableAdapters.TableAdapterManager.UpdateOrderOption.InsertUpdateDelete
         '
         'frmArc
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(9.0!, 20.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
         Me.ClientSize = New System.Drawing.Size(539, 497)
-        Me.Controls.Add(Me.lblTail)
-        Me.Controls.Add(Me.LblHead)
-        Me.Controls.Add(Me.TextBox1)
-        Me.Controls.Add(Me.lblSearch)
-        Me.Controls.Add(Me.txtSearch)
+        Me.Controls.Add(Me.FindArcToolStrip)
         Me.Controls.Add(Me.btnUpdate)
         Me.Controls.Add(TailLabel)
         Me.Controls.Add(Me.TailTextBox)
@@ -337,13 +333,16 @@ Partial Class frmArc
         Me.Controls.Add(CapacityLabel)
         Me.Controls.Add(Me.CapacityTextBox)
         Me.Controls.Add(Me.ArcsBindingNavigator)
+        Me.Icon = CType(resources.GetObject("$this.Icon"), System.Drawing.Icon)
         Me.Name = "frmArc"
         Me.Text = "frmArc"
-        CType(Me.DatabaseDataSet1, System.ComponentModel.ISupportInitialize).EndInit()
-        CType(Me.ArcsBindingSource, System.ComponentModel.ISupportInitialize).EndInit()
         CType(Me.ArcsBindingNavigator, System.ComponentModel.ISupportInitialize).EndInit()
         Me.ArcsBindingNavigator.ResumeLayout(False)
         Me.ArcsBindingNavigator.PerformLayout()
+        Me.FindArcToolStrip.ResumeLayout(False)
+        Me.FindArcToolStrip.PerformLayout()
+        CType(Me.ArcsBindingSource, System.ComponentModel.ISupportInitialize).EndInit()
+        CType(Me.DatabaseDataSet1, System.ComponentModel.ISupportInitialize).EndInit()
         Me.ResumeLayout(False)
         Me.PerformLayout()
 
@@ -371,9 +370,10 @@ Partial Class frmArc
     Friend WithEvents DistanceTextBox As TextBox
     Friend WithEvents CapacityTextBox As TextBox
     Friend WithEvents btnUpdate As Button
-    Friend WithEvents txtSearch As TextBox
-    Friend WithEvents lblSearch As Label
-    Friend WithEvents TextBox1 As TextBox
-    Friend WithEvents LblHead As Label
-    Friend WithEvents lblTail As Label
+    Friend WithEvents FindArcToolStrip As ToolStrip
+    Friend WithEvents HeadToolStripLabel As ToolStripLabel
+    Friend WithEvents HeadToolStripTextBox As ToolStripTextBox
+    Friend WithEvents TailToolStripLabel As ToolStripLabel
+    Friend WithEvents TailToolStripTextBox As ToolStripTextBox
+    Friend WithEvents FindArcToolStripButton As ToolStripButton
 End Class

@@ -22,6 +22,7 @@ Partial Class frmMap
     'Do not modify it using the code editor.
     <System.Diagnostics.DebuggerStepThrough()> _
     Private Sub InitializeComponent()
+        Dim resources As System.ComponentModel.ComponentResourceManager = New System.ComponentModel.ComponentResourceManager(GetType(frmMap))
         Me.cboProduct = New System.Windows.Forms.ComboBox()
         Me.Label3 = New System.Windows.Forms.Label()
         Me.SuspendLayout()
@@ -50,6 +51,7 @@ Partial Class frmMap
         Me.ClientSize = New System.Drawing.Size(902, 612)
         Me.Controls.Add(Me.cboProduct)
         Me.Controls.Add(Me.Label3)
+        Me.Icon = CType(resources.GetObject("$this.Icon"), System.Drawing.Icon)
         Me.Margin = New System.Windows.Forms.Padding(4, 5, 4, 5)
         Me.MinimizeBox = False
         Me.Name = "frmMap"

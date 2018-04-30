@@ -25,8 +25,18 @@
         End Try
     End Sub
 
-    Private Sub txtSearch_TextChanged(sender As Object, e As EventArgs) Handles txtSearch.TextChanged
-        Dim search As String = txtSearch.Text
+    Private Sub btnSearch_Click(sender As Object, e As EventArgs)
+
+    End Sub
+
+    Private Sub FindArcToolStripButton_Click(sender As Object, e As EventArgs) Handles FindArcToolStripButton.Click
+        Try
+            If Me.ArcsTableAdapter1.FindArc(Me.DatabaseDataSet1.Arcs, HeadToolStripTextBox.Text, TailToolStripTextBox.Text) = Nothing Then
+                Throw New Exception
+            End If
+        Catch ex As Exception
+            MessageBox.Show("Could not Find Arc")
+        End Try
 
     End Sub
 End Class

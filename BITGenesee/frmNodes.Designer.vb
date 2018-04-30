@@ -41,6 +41,8 @@ Partial Class frmNodes
         Me.BindingNavigatorAddNewItem = New System.Windows.Forms.ToolStripButton()
         Me.BindingNavigatorDeleteItem = New System.Windows.Forms.ToolStripButton()
         Me.BindingNavigator1 = New System.Windows.Forms.BindingNavigator(Me.components)
+        Me.NodesBindingSource = New System.Windows.Forms.BindingSource(Me.components)
+        Me.DatabaseDataSet = New BITGenesee.DatabaseDataSet()
         Me.CityTextBox = New System.Windows.Forms.TextBox()
         Me.CodeTextBox = New System.Windows.Forms.TextBox()
         Me.Prod1DemTextBox = New System.Windows.Forms.TextBox()
@@ -50,8 +52,6 @@ Partial Class frmNodes
         Me.SaveFileDialog2 = New System.Windows.Forms.SaveFileDialog()
         Me.SaveFileDialog3 = New System.Windows.Forms.SaveFileDialog()
         Me.btnUpdate = New System.Windows.Forms.Button()
-        Me.NodesBindingSource = New System.Windows.Forms.BindingSource(Me.components)
-        Me.DatabaseDataSet = New BITGenesee.DatabaseDataSet()
         Me.NodesTableAdapter = New BITGenesee.DatabaseDataSetTableAdapters.NodesTableAdapter()
         Me.TableAdapterManager = New BITGenesee.DatabaseDataSetTableAdapters.TableAdapterManager()
         CityLabel = New System.Windows.Forms.Label()
@@ -219,6 +219,16 @@ Partial Class frmNodes
         Me.BindingNavigator1.TabIndex = 0
         Me.BindingNavigator1.Text = "BindingNavigator1"
         '
+        'NodesBindingSource
+        '
+        Me.NodesBindingSource.DataMember = "Nodes"
+        Me.NodesBindingSource.DataSource = Me.DatabaseDataSet
+        '
+        'DatabaseDataSet
+        '
+        Me.DatabaseDataSet.DataSetName = "DatabaseDataSet"
+        Me.DatabaseDataSet.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema
+        '
         'CityTextBox
         '
         Me.CityTextBox.DataBindings.Add(New System.Windows.Forms.Binding("Text", Me.NodesBindingSource, "City", True))
@@ -273,16 +283,6 @@ Partial Class frmNodes
         Me.btnUpdate.Text = "Update Demand"
         Me.btnUpdate.UseVisualStyleBackColor = True
         '
-        'NodesBindingSource
-        '
-        Me.NodesBindingSource.DataMember = "Nodes"
-        Me.NodesBindingSource.DataSource = Me.DatabaseDataSet
-        '
-        'DatabaseDataSet
-        '
-        Me.DatabaseDataSet.DataSetName = "DatabaseDataSet"
-        Me.DatabaseDataSet.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema
-        '
         'NodesTableAdapter
         '
         Me.NodesTableAdapter.ClearBeforeFill = True
@@ -312,6 +312,7 @@ Partial Class frmNodes
         Me.Controls.Add(Prod3DemLabel)
         Me.Controls.Add(Me.Prod3DemTextBox)
         Me.Controls.Add(Me.BindingNavigator1)
+        Me.Icon = CType(resources.GetObject("$this.Icon"), System.Drawing.Icon)
         Me.Margin = New System.Windows.Forms.Padding(2)
         Me.Name = "frmNodes"
         Me.Text = "Nodes"

@@ -194,7 +194,7 @@ Partial Class frmProducts
         Me.ProductsDataGridView.Dock = System.Windows.Forms.DockStyle.Fill
         Me.ProductsDataGridView.GridColor = System.Drawing.SystemColors.ControlLight
         Me.ProductsDataGridView.Location = New System.Drawing.Point(0, 39)
-        Me.ProductsDataGridView.Margin = New System.Windows.Forms.Padding(2, 2, 2, 2)
+        Me.ProductsDataGridView.Margin = New System.Windows.Forms.Padding(2)
         Me.ProductsDataGridView.Name = "ProductsDataGridView"
         Me.ProductsDataGridView.RowTemplate.Height = 33
         Me.ProductsDataGridView.Size = New System.Drawing.Size(344, 226)
@@ -219,7 +219,8 @@ Partial Class frmProducts
         Me.ClientSize = New System.Drawing.Size(344, 265)
         Me.Controls.Add(Me.ProductsDataGridView)
         Me.Controls.Add(Me.ProductsBindingNavigator)
-        Me.Margin = New System.Windows.Forms.Padding(2, 2, 2, 2)
+        Me.Icon = CType(resources.GetObject("$this.Icon"), System.Drawing.Icon)
+        Me.Margin = New System.Windows.Forms.Padding(2)
         Me.Name = "frmProducts"
         Me.Text = "Products"
         CType(Me.DatabaseDataSet, System.ComponentModel.ISupportInitialize).EndInit()
